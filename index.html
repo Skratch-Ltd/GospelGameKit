@@ -25,6 +25,11 @@
     <title>Onsen UI Master-Details</title>
 
     <style>
+        .card {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
         .item {
             padding: 10px;
             line-height: 1;
@@ -32,8 +37,7 @@
 
         .item-thum {
             background-color: #ccc;
-            width: 50px;
-            height: 50px;
+            width: 80%;
             border-radius: 4px;
         }
 
@@ -50,10 +54,8 @@
             padding: 0 30px 0 0;
         }
 
-        .item-label {
-            font-size: 12px;
-            color: #999;
-            float: right;
+        .item-scroll {
+            width: 100%;
         }
     </style>
 
@@ -68,25 +70,26 @@
     <ons-navigator var="navi">
         <ons-page>
             <ons-toolbar>
-                <div class="center">Master Details</div>
+                <div class="center">Gospel Game Kit</div>
             </ons-toolbar>
 
-            <ons-list ng-controller="MasterController">
-                <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
-                    <ons-row>
-                        <ons-col width="60px">
-                            <div class="item-thum"></div>
-                        </ons-col>
-                        <ons-col>
-                            <header>
-                                <span class="item-title">{{item.title}}</span>
-                                <span class="item-label">{{item.label}}</span>
-                            </header>
-                            <p class="item-desc">{{item.desc}}</p>
-                        </ons-col>
-                    </ons-row>
-                </ons-list-item>
-            </ons-list>
+            <ons-scroller class="item-scroll">
+                <ons-list modifier="inset" class="card" ng-controller="MasterController">
+                    <ons-list-item class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+                        <ons-row>
+                            <ons-col width="30%">
+                                <div class="item-thum"></div>
+                            </ons-col>
+                            <ons-col>
+                                <header>
+                                    <span class="item-title">{{item.title}}</span>
+                                </header>
+                                <p class="item-desc">{{item.desc}}</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                </ons-list>
+            </ons-scroller>
         </ons-page>
     </ons-navigator>
 
@@ -130,6 +133,39 @@
             </ons-list>
 
             <br>
+
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="catch.html">
+        <ons-page ng-controller="DetailController">
+
+            <ons-toolbar>
+                <div class="left"><ons-back-button>Back</ons-back-button></div>
+                <div class="center">Details</div>
+            </ons-toolbar>
+
+            <ons-list modifier="inset" class="card">
+                <ons-list-item class="item">
+                    <ons-row>
+                        <ons-col width="60px">
+                            <div class="item-thum"></div>
+                        </ons-col>
+                        <ons-col>
+                            <header>
+                                <span class="item-title">{{item.title}}</span>
+                                <span class="item-label">{{item.label}}</span>
+                            </header>
+                            <p class="item-desc">{{item.desc}}</p>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" ng-click="doSomething()">
+                    <ons-icon icon="ion-chatboxes" fixed-width="true" style="color: #ccc"></ons-icon>
+                    Add a note
+                </ons-list-item>
+            </ons-list>
 
         </ons-page>
     </ons-template>

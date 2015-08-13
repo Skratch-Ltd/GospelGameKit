@@ -20,7 +20,7 @@
     $scope.showDetail = function(index) {
       var selectedItem = $data.items[index];
       $data.selectedItem = selectedItem;
-      $scope.navi.pushPage('detail.html', {title : selectedItem.title});
+      $scope.navi.pushPage(selectedItem.page, {title : selectedItem.title});
     };
   });
 
@@ -29,28 +29,27 @@
 
       data.items = [
           {
-              title: 'Item 1 Title',
-              label: '4h',
-              desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              title: 'Catch Phrase',
+              page: 'catch.html',
+              desc: 'Get your team to guess the phrase without using any of the words in the phrase, then pass it on. The team whose turn it is when the time runs out will lose the round.'
           },
           {
-              title: 'Another Item Title',
-              label: '6h',
-              desc: 'Ut enim ad minim veniam.'
+              title: 'Charades',
+              page: 'detail.html',
+              desc: 'Get your team to guess the phrase without saying a word. The first team to guess the the phrase will win the round.'
           },
           {
-              title: 'Yet Another Item Title',
-              label: '1day ago',
-              desc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+              title: 'Password',
+              page: 'detail.html',
+              desc: 'Get your team to guess the password by giving a one word clue. If your team is unsuccessful then the next team has a turn. Each wrong guess reduces the amount of points awarded to the winning team.'
           },
           {
-              title: 'Yet Another Item Title',
-              label: '1day ago',
-              desc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+              title: 'Heads Up',
+              page: 'detail.html',
+              desc: 'Your team gets you to guess the phrase without using any of the words in the phrase. Guess as many as you can in the time limit. Tilt the screen forward for a correct guess or tilt it back to pass.'
           }
       ];
 
       return data;
   });
 })();
-
