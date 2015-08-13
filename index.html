@@ -1,91 +1,137 @@
-<!doctype html>
-<meta charset="utf-8">
-<link rel="stylesheet" href="css/onsenui.css">
-<link rel="stylesheet" href="css/onsen-css-components.css">
-<script src="js/angular.min.js"></script>
-<script src="js/onsenui.min.js"></script>
-<script>
-  ons.bootstrap();
-</script>
+<!DOCTYPE html>
+<!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
+<html lang="en" ng-app="app" ng-csp>
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
 
-<ons-navigator title="Navigator" var="myNavigator">
-  <ons-page>
+    <!-- JS dependencies (order matters!) -->
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
 
-      <ons-toolbar>
-      <div class="center">Toolbars</div>
-      <div class="right">
-        <ons-toolbar-button>
-          <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em">
-        </ons-toolbar-button>
-      </div>
-    </ons-toolbar>
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
 
-    <ons-list>
-      <ons-list-header>Toolbar Variations</ons-list-header>
-      <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('page2.html', { animation : 'slide' } )">
-        HTML Content
-      </ons-list-item>
-      <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('page4.html', { animation : 'slide' } )">
-        Search Box
-      </ons-list-item>
-      <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('page5.html', { animation : 'slide' } )">
-        Images
-      </ons-list-item>
-    </ons-list>
-  </ons-page>
-</ons-navigator>
+    <!-- CSP support mode (required for Windows Universal apps) -->
+    <link rel="stylesheet" href="lib/angular/angular-csp.css" />
 
-<ons-template id="page2.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left" style="line-height: 44px">
-        <ons-back-button>Back</ons-back-button>
-      </div>
-      <div class="center">Title</div>
-      <div class="right" style="line-height: 44px">
-        Right
-      </div>
-    </ons-toolbar>
 
-    <div style="text-align: center">
-      <br />
-      <ons-button modifier="light" onclick="myNavigator.popPage()">
-        Pop Page
-      </ons-button>
-    </div>
-  </ons-page>
-</ons-template>
-        
-<ons-template id="page4.html">
-  <ons-page>
-    <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Search</div>
-        <div class="right" style="padding-right: 6px"><input type="search" class="search-input" placeholder="Search" style="margin-top: 6px;"></div>
-    </ons-toolbar>
+    <!-- --------------- App init --------------- -->
+    <script src="js/app.js"></script>
 
-    <div style="text-align: center">
-      <br />
-      <ons-button modifier="light" onclick="myNavigator.popPage()">
-        Pop Page
-      </ons-button>
-    </div>
-  </ons-page>
-</ons-template>
+    <title>Onsen UI Master-Details</title>
 
-<ons-template id="page5.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left"><ons-back-button>Back</ons-back-button></div>
-      <div class="center"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAAAiCAYAAABm4YqjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo0MGE4NmNiZC1hOWNkLTRiM2UtOTBlOS1jZDNhNzg2Y2QyNDciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDY0RTcyRTM2NTM1MTFFM0JFMzFFRkQyMTU5NENFQTIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDY0RTcyRTI2NTM1MTFFM0JFMzFFRkQyMTU5NENFQTIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBENUNFREUwMEQyMDY4MTE4MjJBODUxRTdBOTYwMjJCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQwYTg2Y2JkLWE5Y2QtNGIzZS05MGU5LWNkM2E3ODZjZDI0NyIvPiA8L3Jk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"></div>
-      <div class="right"><ons-search-input></ons-search-input></div>
-    </ons-toolbar>
+    <style>
+        .item {
+            padding: 10px;
+            line-height: 1;
+        }
 
-    <div style="text-align: center">
-      <br />
-      <ons-button modifier="light" onclick="myNavigator.popPage()">
-        Pop Page
-      </ons-button>
-    </div>
-  </ons-page>
-</ons-template>
+        .item-thum {
+            background-color: #ccc;
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+        }
+
+        .item-title {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .item-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.3;
+            margin: 4px 0 0 0;
+            padding: 0 30px 0 0;
+        }
+
+        .item-label {
+            font-size: 12px;
+            color: #999;
+            float: right;
+        }
+    </style>
+
+</head>
+
+<body ng-controller="AppController">
+    <!-- Cordova reference -->
+    <script src="cordova.js"></script>
+    <script src="scripts/index.js"></script>
+    <!-- -->
+
+    <ons-navigator var="navi">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">Master Details</div>
+            </ons-toolbar>
+
+            <ons-list ng-controller="MasterController">
+                <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+                    <ons-row>
+                        <ons-col width="60px">
+                            <div class="item-thum"></div>
+                        </ons-col>
+                        <ons-col>
+                            <header>
+                                <span class="item-title">{{item.title}}</span>
+                                <span class="item-label">{{item.label}}</span>
+                            </header>
+                            <p class="item-desc">{{item.desc}}</p>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+            </ons-list>
+        </ons-page>
+    </ons-navigator>
+
+    <ons-template id="detail.html">
+        <ons-page ng-controller="DetailController">
+
+            <ons-toolbar>
+                <div class="left"><ons-back-button>Back</ons-back-button></div>
+                <div class="center">Details</div>
+            </ons-toolbar>
+
+            <ons-list modifier="inset" style="margin-top: 10px">
+                <ons-list-item class="item">
+                    <ons-row>
+                        <ons-col width="60px">
+                            <div class="item-thum"></div>
+                        </ons-col>
+                        <ons-col>
+                            <header>
+                                <span class="item-title">{{item.title}}</span>
+                                <span class="item-label">{{item.label}}</span>
+                            </header>
+                            <p class="item-desc">{{item.desc}}</p>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" ng-click="doSomething()">
+                    <ons-icon icon="ion-chatboxes" fixed-width="true" style="color: #ccc"></ons-icon>
+                    Add a note
+                </ons-list-item>
+            </ons-list>
+
+            <ons-list style="margin-top: 10px">
+                <ons-list-item class="item" ng-repeat="i in [1,2,3]">
+                    <header>
+                        <span class="item-title">Lorem ipsum dolor sit amet</span>
+                    </header>
+                    <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </ons-list-item>
+            </ons-list>
+
+            <br>
+
+        </ons-page>
+    </ons-template>
+</body>
+</html>
