@@ -2,138 +2,86 @@
 <!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
 <html lang="en" ng-app="app" ng-csp>
 <head>
-    <meta charset="utf-8" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
+  <meta charset="utf-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
 
-    <!-- JS dependencies (order matters!) -->
-    <script src="scripts/platformOverrides.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/onsen/js/onsenui.js"></script>
+  <!-- JS dependencies (order matters!) -->
+  <script src="scripts/platformOverrides.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/onsen/js/onsenui.js"></script>
 
-    <!-- CSS dependencies -->
-    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
-    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
+  <!-- CSS dependencies -->
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
+  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
 
-    <!-- CSP support mode (required for Windows Universal apps) -->
-    <link rel="stylesheet" href="lib/angular/angular-csp.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+  <!-- CSP support mode (required for Windows Universal apps) -->
+  <link rel="stylesheet" href="lib/angular/angular-csp.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 
 
-    <!-- --------------- App init --------------- -->
-    <script src="js/app.js"></script>
+  <!-- --------------- App init --------------- -->
+  <script src="js/app.js"></script>
 
-    <title>Onsen UI Master-Details</title>
+  <title>Onsen UI Master-Details</title>
 
 </head>
 
 <body ng-controller="AppController">
-    <!-- Cordova reference -->
-    <script src="cordova.js"></script>
-    <script src="scripts/index.js"></script>
-    <!-- -->
+  <!-- Cordova reference -->
+  <script src="cordova.js"></script>
+  <script src="scripts/index.js"></script>
+  <!-- -->
 
-    <ons-navigator var="navi">
-        <ons-page>
-            <ons-toolbar>
-                <div class="center">Gospel Game Kit</div>
-            </ons-toolbar>
+  <ons-navigator var="navi">
+    <ons-page ng-controller="MasterController">
+      <ons-toolbar>
+        <div class="center">Gospel Game Kit</div>
+      </ons-toolbar>
 
-            <ons-scroller class="item-scroll">
-                <ons-list modifier="inset" class="card" ng-controller="MasterController">
-                    <ons-list-item modifier="tappable" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
-                        <ons-row>
-                            <ons-col width="30%">
-                                <div class="item-thum"></div>
-                            </ons-col>
-                            <ons-col>
-                                <header>
-                                    <span class="item-title">{{item.title}}</span>
-                                </header>
-                                <p class="item-desc">{{item.desc}}</p>
-                            </ons-col>
-                        </ons-row>
-                    </ons-list-item>
-                </ons-list>
-            </ons-scroller>
-        </ons-page>
-    </ons-navigator>
+      <ons-carousel class="carousel" swipeable overscrollable auto-scroll var="carousel">
+        <ons-carousel-item ng-repeat="item in items" ng-click="showDetail($index)">
+          <!-- TODO: Replace the element below with the game select element -->
+          <div class="item-label">{{item.title}}</div>
+        </ons-carousel-item>
+      </ons-carousel>
+      <div class="mini-carousel">
+        <div ng-repeat="n in [1,2,3,4]" class="mini-selector" ng-click="changeGame($index)"></div>
+      </div>
+    </ons-page>
+  </ons-navigator>
 
-    <ons-template id="detail.html">
-        <ons-page ng-controller="DetailController">
+  <ons-template id="detail.html">
+    <ons-page ng-controller="DetailController">
 
-            <ons-toolbar>
-                <div class="left"><ons-back-button>Back</ons-back-button></div>
-                <div class="center">Details</div>
-            </ons-toolbar>
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Details</div>
+      </ons-toolbar>
 
-            <ons-list modifier="inset" style="margin-top: 10px">
-                <ons-list-item class="item">
-                    <ons-row>
-                        <ons-col width="60px">
-                            <div class="item-thum"></div>
-                        </ons-col>
-                        <ons-col>
-                            <header>
-                                <span class="item-title">{{item.title}}</span>
-                                <span class="item-label">{{item.label}}</span>
-                            </header>
-                            <p class="item-desc">{{item.desc}}</p>
-                        </ons-col>
-                    </ons-row>
-                </ons-list-item>
+      <ons-list modifier="inset" class="card">
+        <ons-list-item class="item">
+          <ons-row>
+            <ons-col width="60px">
+              <div class="item-thum"></div>
+            </ons-col>
+            <ons-col>
+              <header>
+                <span class="item-title">{{item.title}}</span>
+                <span class="item-label">{{item.label}}</span>
+              </header>
+              <p class="item-desc">{{item.desc}}</p>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
 
-                <ons-list-item modifier="chevron" ng-click="doSomething()">
-                    <ons-icon icon="ion-chatboxes" fixed-width="true" style="color: #ccc"></ons-icon>
-                    Add a note
-                </ons-list-item>
-            </ons-list>
+        <ons-list-item modifier="chevron" ng-click="doSomething()">
+          <ons-icon icon="ion-chatboxes" fixed-width="true" style="color: #ccc"></ons-icon>
+          Add a note
+        </ons-list-item>
+      </ons-list>
 
-            <ons-list style="margin-top: 10px">
-                <ons-list-item class="item" ng-repeat="i in [1,2,3]">
-                    <header>
-                        <span class="item-title">Lorem ipsum dolor sit amet</span>
-                    </header>
-                    <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </ons-list-item>
-            </ons-list>
-
-            <br>
-
-        </ons-page>
-    </ons-template>
-
-    <ons-template id="catch.html">
-        <ons-page ng-controller="DetailController">
-
-            <ons-toolbar>
-                <div class="left"><ons-back-button>Back</ons-back-button></div>
-                <div class="center">Details</div>
-            </ons-toolbar>
-
-            <ons-list modifier="inset" class="card">
-                <ons-list-item class="item">
-                    <ons-row>
-                        <ons-col width="60px">
-                            <div class="item-thum"></div>
-                        </ons-col>
-                        <ons-col>
-                            <header>
-                                <span class="item-title">{{item.title}}</span>
-                                <span class="item-label">{{item.label}}</span>
-                            </header>
-                            <p class="item-desc">{{item.desc}}</p>
-                        </ons-col>
-                    </ons-row>
-                </ons-list-item>
-
-                <ons-list-item modifier="chevron" ng-click="doSomething()">
-                    <ons-icon icon="ion-chatboxes" fixed-width="true" style="color: #ccc"></ons-icon>
-                    Add a note
-                </ons-list-item>
-            </ons-list>
-
-        </ons-page>
-    </ons-template>
+    </ons-page>
+  </ons-template>
 </body>
 </html>
