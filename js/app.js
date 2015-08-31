@@ -20,11 +20,19 @@
     $scope.showDetail = function(index) {
       var selectedItem = $data.items[index];
       $data.selectedItem = selectedItem;
-      $scope.navi.pushPage("detail.html", {title : selectedItem.title});
+      $scope.navi.pushPage("detail.html", {title: selectedItem.title, animation: "lift" });
     };
 
     $scope.changeGame = function(index) {
       carousel.setActiveCarouselItemIndex(index);
+    }
+
+    ons.createPopover('popover.html').then(function(popover) {
+      $scope.popover = popover;
+    });
+
+    $scope.showPopover = function(e) {
+      $scope.popover.show(e);
     }
   });
 

@@ -37,6 +37,11 @@
     <ons-page ng-controller="MasterController">
       <ons-toolbar>
         <div class="center">Gospel Game Kit</div>
+        <div class="right">
+          <ons-toolbar-button id="menu-button" ng-click="showPopover('#menu-button')">
+            <ons-icon icon="fa-bars">
+          </ons-toolbar-button>
+        </div>
       </ons-toolbar>
 
       <ons-carousel class="carousel" swipeable overscrollable auto-scroll var="carousel">
@@ -83,5 +88,15 @@
 
     </ons-page>
   </ons-template>
+
+  <ons-template id="popover.html">
+    <ons-popover direction="up down" cancelable>
+      <div style="text-align: center; opacity: 0.5;">
+        <p>This is a popover!</p>
+        <p><small>Click the background to remove the popover.</small></p>
+      </div>
+    </ons-popover>
+  </ons-template>
+
 </body>
 </html>
