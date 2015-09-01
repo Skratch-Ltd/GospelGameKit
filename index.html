@@ -44,10 +44,10 @@
         </div>
       </ons-toolbar>
 
-      <ons-carousel class="carousel" swipeable overscrollable auto-scroll var="carousel">
-        <ons-carousel-item ng-repeat="item in items" ng-click="showDetail($index)">
+      <ons-carousel class="carousel" swipeable overscrollable auto-scroll var="gameCarousel">
+        <ons-carousel-item ng-repeat="game in games" ng-click="showDetail($index)">
           <!-- TODO: Replace the element below with the game select element -->
-          <div class="item-label">{{item.title}}</div>
+          <div class="item-label">{{game.title}}</div>
         </ons-carousel-item>
       </ons-carousel>
       <div class="mini-carousel">
@@ -60,31 +60,21 @@
     <ons-page ng-controller="DetailController">
 
       <ons-toolbar>
+        <!-- TODO: Change to up arrow? -->
         <div class="left"><ons-back-button>Back</ons-back-button></div>
         <div class="center">Details</div>
       </ons-toolbar>
 
-      <ons-list modifier="inset" class="card">
-        <ons-list-item class="item">
-          <ons-row>
-            <ons-col width="60px">
-              <div class="item-thum"></div>
-            </ons-col>
-            <ons-col>
-              <header>
-                <span class="item-title">{{item.title}}</span>
-                <span class="item-label">{{item.label}}</span>
-              </header>
-              <p class="item-desc">{{item.desc}}</p>
-            </ons-col>
-          </ons-row>
-        </ons-list-item>
+      <ons-carousel class="carousel" swipeable overscrollable auto-scroll var="topicCarousel">
+        <ons-carousel-item ng-repeat="topic in topics" ng-click="showDetail($index)">
+          <!-- TODO: Replace the element below with the game select element -->
+          <div class="item-label">{{topic.title}}</div>
+        </ons-carousel-item>
+      </ons-carousel>
 
-        <ons-list-item modifier="chevron" ng-click="doSomething()">
-          <ons-icon icon="ion-chatboxes" fixed-width="true" style="color: #ccc"></ons-icon>
-          Add a note
-        </ons-list-item>
-      </ons-list>
+      <div class="mini-carousel">
+        <div ng-repeat="n in topics" class="mini-selector" ng-click="changeTopic($index)"></div>
+      </div>
 
     </ons-page>
   </ons-template>
