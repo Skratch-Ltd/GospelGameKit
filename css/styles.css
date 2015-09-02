@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
+
+body {
+  font-family: 'Roboto Slab';
+}
+
 .card {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -45,12 +51,49 @@
   display: inline-block;
 }
 
+.mini-selector:active {
+  background-color: rgb(180,180,180)
+}
+
 .mini-carousel {
   text-align: center;
-  height: 10%
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .carousel {
   height: 90%;
   width: 100%;
+}
+
+.item-label ng-binding {
+  background-color: red;
+}
+
+
+/* Navigation Bar Styles */
+
+.navigation-bar {
+  background-color: rgb(75,54,32);
+  border-top: solid 6px rgb(61,41,20);
+  height: 30px;
+}
+
+.navigation-bar__left {
+  padding-left: 10px;
+}
+
+.navigation-bar__title,
+.navigation-bar__left,
+.navigation-bar__right,
+.toolbar-button,
+.toolbar--outline,
+.toolbar-button--quiet,
+.back-button__label,
+.ons-back-button__icon {
+  color: rgb(255,255,255);
+  font-size: 10px;
+  height: 20px;
+  line-height: 20px;
 }
