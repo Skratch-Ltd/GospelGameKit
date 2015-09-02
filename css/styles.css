@@ -19,6 +19,11 @@
     font-weight: 500;
 }
 
+.item-label {
+  text-align: center;
+  padding: 50px;
+}
+
 .item-desc {
     font-size: 14px;
     color: #666;
@@ -36,11 +41,16 @@
   width: 20px;
   height: 20px;
   border-radius: 5px;
-  background-color: blue;
+  background-color: gainsboro;
   display: inline-block;
 }
 
+.mini-carousel {
+  text-align: center;
+  height: 10%
+}
+
 .carousel {
-  height: 80%;
+  height: 90%;
   width: 100%;
 }

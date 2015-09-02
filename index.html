@@ -65,7 +65,7 @@
         <div class="center">Details</div>
       </ons-toolbar>
 
-      <ons-carousel class="carousel" swipeable overscrollable auto-scroll var="topicCarousel">
+      <ons-carousel class="carousel" swipeable overscrollable auto-scroll item-width="30%" var="topicCarousel">
         <ons-carousel-item ng-repeat="topic in topics" ng-click="showDetail($index)">
           <!-- TODO: Replace the element below with the game select element -->
           <div class="item-label">{{topic.title}}</div>
