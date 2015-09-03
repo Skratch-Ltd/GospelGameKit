@@ -65,28 +65,36 @@
 
       data.topics = [
         {
-          title: 'Book of Mormon'
+          title: 'Book of Mormon',
+          words: ['1 Nephi','2 Nephi','Jacob','Enos','Jarom','Omni','Words of Mormon','Mosiah','Alma','Helaman','3 Nephi','4 Nephi','Mormon','Ether','Moroni']
         },
         {
-          title: 'Church History'
+          title: 'Church History',
+          words: []
         },
         {
-          title: 'Doctrine and Covenants'
+          title: 'Doctrine and Covenants',
+          words: []
         },
         {
-          title: 'Hymns'
+          title: 'Hymns',
+          words: []
         },
         {
-          title: 'New Testament'
+          title: 'New Testament',
+          words: []
         },
         {
-          title: 'Old Testament'
+          title: 'Old Testament',
+          words: []
         },
         {
-          title: 'Pearl of Great Price'
+          title: 'Pearl of Great Price',
+          words: ['Moses','Abraham','Joseph Smith-Matthew','Joseph Smith-History','Articles of Faith']
         },
         {
-          title: 'Primary Songs'
+          title: 'Primary Songs',
+          words: []
         },
         {
           title: 'Random'
