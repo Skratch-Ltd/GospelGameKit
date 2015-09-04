@@ -63,6 +63,9 @@
           }
       ];
 
+      //Words that could be in all of the topic lists except for hymns and primary songs
+      data.words = ['Faith','Repentance','Baptism','Holy Ghost'];
+
       data.topics = [
         {
           title: 'Book of Mormon',
