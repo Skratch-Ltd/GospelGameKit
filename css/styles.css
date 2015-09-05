@@ -69,10 +69,48 @@ body {
   width: 100%;
 }
 
+.checkbox {
+  width: 100%;
+}
+
+.checkbox__checkmark {
+  float: right;
+}
+
+.checkbox--noborder > .checkbox__checkmark:after {
+  top: 4px;
+  left: 4px;
+  opacity: 0;
+  width: 10px;
+  height: 5px;
+}
+
+.checkbox--noborder > .checkbox__checkmark {
+  border: 1px solid grey;
+  margin-top: 2px;
+  width: 20px;
+  height: 20px;
+}
+
+.range {
+  width: 100px;
+}
+
 .item-label ng-binding {
   background-color: red;
 }
 
+.popover__top-arrow {
+  display: none;
+}
+
+.checkbox > .checkbox__checkmark:before {
+  border-radius: 0px;
+}
+
+.checkbox--noborder > .checkbox__checkmark:after {
+  border-color: grey;
+}
 
 /* Navigation Bar Styles */
 

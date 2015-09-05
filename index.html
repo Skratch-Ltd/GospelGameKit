@@ -73,19 +73,28 @@
         </ons-carousel-item>
       </ons-carousel>
 
-      <div class="mini-carousel">
-        <div ng-repeat="n in topics" class="mini-selector" ng-click="changeTopic($index)"></div>
-      </div>
-
     </ons-page>
   </ons-template>
 
   <ons-template id="popover.html">
-    <ons-popover direction="up down" cancelable>
-      <div style="text-align: center; opacity: 0.5;">
-        <p>This is a popover!</p>
-        <p><small>Click the background to remove the popover.</small></p>
-      </div>
+    <ons-popover direction="down" cancelable modifier="android">
+      <ons-list>
+        <ons-list-item>
+          <label class="checkbox checkbox--noborder">Sound<input type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
+        </ons-list-item>
+        <ons-list-item>
+          <label class="checkbox checkbox--noborder">Music<input type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
+        </ons-list-item>
+        <ons-list-item>
+          <label class="checkbox checkbox--noborder">Instructions<input type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
+        </ons-list-item>
+        <ons-list-item>
+          <label class="checkbox checkbox--noborder">Timer Length<input type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
+        </ons-list-item>
+        <ons-list-item>
+          <label>1min <input type="range" class="range" min="1" max="3" step="0.5"> 3min</label>
+        </ons-list-item>
+      </ons-list>
     </ons-popover>
   </ons-template>
 
