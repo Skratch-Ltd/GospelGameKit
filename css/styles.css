@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 
 body {
+  background-color: rgb(233,233,233);
   font-family: 'Roboto Slab';
 }
 
@@ -75,13 +77,15 @@ body {
 /* Navigation Bar Styles */
 
 .navigation-bar {
-  background-color: rgb(75,54,32);
-  border-top: solid 6px rgb(61,41,20);
+  background-color: rgb(64,64,64);
+  border-top: solid 6px rgb(50,50,50);
   height: 30px;
 }
 
 .navigation-bar__left {
   padding-left: 10px;
+  font-family: 'Slabo';
+  letter-spacing: 1px;
 }
 
 .navigation-bar__title,
