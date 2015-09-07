@@ -1,8 +1,12 @@
 (function(){
   'use strict';
   var module = angular.module('app', ['onsen']);
+  var game, topic;
+  var settings = localStorage.getItem("ggk-settings") || {music: true, sound: true, instructions: true, timerLegth: 120};
+  localStorage.setItem("ggk-settings", settings);
 
   module.controller('AppController', function($scope, $data) {
+
     $scope.doSomething = function() {
       setTimeout(function() {
         ons.notification.alert({ message: 'tapped' });
@@ -10,22 +14,41 @@
     };
   });
 
-  module.controller('DetailController', function($scope, $data) {
-    $scope.game = $data.selectedGame;
+  module.controller('TopicController', function($scope, $data) {
     $scope.topics = $data.topics;
 
-    $scope.changeTopic = function(index) {
-      topicCarousel.setActiveCarouselItemIndex(index);
+    $scope.showInstructions = function(index) {
+      topic = $scope.topics[index];
+      $scope.navi.pushPage("instructions.html", {animation: "lift" });
+    }
+  });
+
+  module.controller('InstructionController', function($scope, $data) {
+    $scope.startGame = function() {
+      console.log(game.title + ': ' + topic.title);
+      $scope.navi.replacePage("game.html", {animation: "lift" });
+    }
+  });
+
+  module.controller('GameController', function($scope, $data) {
+    debugger;
+    var index = 0;
+    word_div.innerHTML = topic.words[index];
+
+    $scope.nextWord = function() {
+      index++;
+      if (index == topic.words.length)
+        index = 0;
+      word_div.innerHTML = topic.words[index];
     }
   });
 
   module.controller('MasterController', function($scope, $data) {
     $scope.games = $data.games;
 
-    $scope.showDetail = function(index) {
-      var selectedGame = $data.games[index];
-      $data.selectedGame = selectedGame;
-      $scope.navi.pushPage("detail.html", {title: selectedGame.title, animation: "lift" });
+    $scope.showTopic = function(index) {
+      game = $data.games[index];
+      $scope.navi.pushPage("topics.html", {animation: "lift" });
     };
 
     $scope.changeGame = function(index) {

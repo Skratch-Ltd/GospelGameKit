@@ -46,7 +46,7 @@
       </ons-toolbar>
 
       <ons-carousel class="carousel" swipeable overscrollable auto-scroll var="gameCarousel">
-        <ons-carousel-item ng-repeat="game in games" ng-click="showDetail($index)">
+        <ons-carousel-item ng-repeat="game in games" ng-click="showTopic($index)">
           <!-- TODO: Replace the element below with the game select element -->
           <div class="item-label">{{game.title}}</div>
         </ons-carousel-item>
@@ -57,21 +57,39 @@
     </ons-page>
   </ons-navigator>
 
-  <ons-template id="detail.html">
-    <ons-page ng-controller="DetailController">
+  <ons-template id="topics.html">
+    <ons-page ng-controller="TopicController">
 
       <ons-toolbar>
         <!-- TODO: Change to up arrow? -->
         <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Details</div>
+        <div class="center">Topics</div>
       </ons-toolbar>
 
       <ons-carousel class="carousel" swipeable overscrollable auto-scroll item-width="30%" var="topicCarousel">
-        <ons-carousel-item ng-repeat="topic in topics" ng-click="showDetail($index)">
+        <ons-carousel-item ng-repeat="topic in topics" ng-click="showInstructions($index)">
           <!-- TODO: Replace the element below with the game select element -->
           <div class="item-label">{{topic.title}}</div>
         </ons-carousel-item>
       </ons-carousel>
+
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="instructions.html">
+    <ons-page ng-controller="InstructionController" ng-click="startGame()">
+
+      <img id="instructions_image">
+      <div class="instructions">Instructions</div>
+
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="game.html">
+    <ons-page ng-controller="GameController">
+
+      <div class="word" id="word_div"></div>
+      <button ng-click="nextWord()">Next</button>
 
     </ons-page>
   </ons-template>
@@ -88,11 +106,9 @@
         <ons-list-item>
           <label class="checkbox checkbox--noborder">Instructions<input type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
         </ons-list-item>
+        <ons-list-item>Timer Length</ons-list-item>
         <ons-list-item>
-          <label class="checkbox checkbox--noborder">Timer Length<input type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
-        </ons-list-item>
-        <ons-list-item>
-          <label>1min <input type="range" class="range" min="1" max="3" step="0.5"> 3min</label>
+          <label>1min <input type="range" class="range" min="60" max="180" step="20"> 3min</label>
         </ons-list-item>
       </ons-list>
     </ons-popover>
