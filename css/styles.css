@@ -1,47 +1,58 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
-@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
-
 body {
   background-color: rgb(233,233,233);
-  font-family: 'Roboto Slab';
 }
 
 .card {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .item {
-    padding: 10px;
-    line-height: 1;
+  padding: 10px;
+  line-height: 1;
 }
 
 .item-thum {
-    background-color: #ccc;
-    width: 80%;
-    border-radius: 4px;
+  background-color: #ccc;
+  width: 80%;
+  border-radius: 4px;
 }
 
 .item-title {
-    font-size: 15px;
-    font-weight: 500;
+  font-size: 14pt;
+  font-weight: 500;
+  text-align: center;
 }
 
 .item-label {
   text-align: center;
-  padding: 50px;
+  font-size: 28pt;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.item-icon {
+  height: 120px;
+  width: 120px;
+  margin: 10px auto;
+  border-radius: 100%;
+}
+
+.topic-icon {
+
 }
 
 .item-desc {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.3;
-    margin: 4px 0 0 0;
-    padding: 0 30px 0 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.3;
+  margin: 0px auto;
+  width: 500px;
+  text-align: center;
 }
 
 .item-scroll {
-    width: 100%;
+  width: 100%;
 }
 
 .mini-selector {
@@ -122,7 +133,6 @@ body {
 
 .navigation-bar__left {
   padding-left: 10px;
-  font-family: 'Slabo';
   letter-spacing: 1px;
 }
 

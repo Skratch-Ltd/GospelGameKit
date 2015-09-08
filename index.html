@@ -48,7 +48,9 @@
       <ons-carousel class="carousel" swipeable overscrollable auto-scroll var="gameCarousel">
         <ons-carousel-item ng-repeat="game in games" ng-click="showTopic($index)">
           <!-- TODO: Replace the element below with the game select element -->
+          <div class="item-icon"><img src="{{game.icon}}"></img></div>
           <div class="item-label">{{game.title}}</div>
+          <div class="item-desc">{{game.desc}}</div>
         </ons-carousel-item>
       </ons-carousel>
       <div class="mini-carousel">
@@ -69,7 +71,7 @@
       <ons-carousel class="carousel" swipeable overscrollable auto-scroll item-width="30%" var="topicCarousel">
         <ons-carousel-item ng-repeat="topic in topics" ng-click="showInstructions($index)">
           <!-- TODO: Replace the element below with the game select element -->
-          <div class="item-label">{{topic.title}}</div>
+          <div class="item-title">{{topic.title}}</div>
         </ons-carousel-item>
       </ons-carousel>
 

@@ -69,18 +69,22 @@
 
       data.games = [
           {
+              icon: 'images/catch-phrase-icon.png',
               title: 'Catch Phrase',
               desc: 'Get your team to guess the phrase without using any of the words in the phrase, then pass it on. The team whose turn it is when the time runs out will lose the round.'
           },
           {
+              icon: 'images/charades-icon.png',
               title: 'Charades',
               desc: 'Get your team to guess the phrase without saying a word. The first team to guess the the phrase will win the round.'
           },
           {
+              icon: 'images/password-icon.png',
               title: 'Password',
               desc: 'Get your team to guess the password by giving a one word clue. If your team is unsuccessful then the next team has a turn. Each wrong guess reduces the amount of points awarded to the winning team.'
           },
           {
+              icon: 'images/heads-up-icon.png',
               title: 'Heads Up',
               desc: 'Your team gets you to guess the phrase without using any of the words in the phrase. Guess as many as you can in the time limit. Tilt the screen forward for a correct guess or tilt it back to pass.'
           }
