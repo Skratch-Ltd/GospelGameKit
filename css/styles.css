@@ -58,9 +58,10 @@ body {
 }
 
 .item-color {
-  position: fixed;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
   width: 100%;
-  bottom: 0;
   border-bottom: 4px solid;
 }
 
