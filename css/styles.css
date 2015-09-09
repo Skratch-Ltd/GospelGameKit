@@ -32,14 +32,16 @@ body {
 }
 
 .item-icon {
+  background-color: grey;
   height: 120px;
   width: 120px;
   margin: 10px auto;
   border-radius: 100%;
 }
 
-.topic-icon {
-
+.item-icon img {
+  width: 120px;
+  height: 120px;
 }
 
 .item-desc {
@@ -53,6 +55,13 @@ body {
 
 .item-scroll {
   width: 100%;
+}
+
+.item-color {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-bottom: 4px solid;
 }
 
 .mini-selector {
