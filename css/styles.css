@@ -145,7 +145,7 @@ body {
 .back-button__label,
 .ons-back-button__icon {
   color: rgb(255,255,255);
-  font-size: 10px;
+  font-size: 15px;
   height: 20px;
   line-height: 20px;
 }

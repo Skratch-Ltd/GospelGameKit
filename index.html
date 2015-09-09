@@ -90,6 +90,12 @@
   <ons-template id="game.html">
     <ons-page ng-controller="GameController">
 
+      <ons-toolbar>
+        <!-- TODO: Change to up arrow? -->
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Game</div>
+      </ons-toolbar>
+
       <div class="word" id="word_div"></div>
       <button ng-click="nextWord()">Next</button>
 
