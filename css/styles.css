@@ -141,6 +141,27 @@ ons-toolbar ~ .page__content {
   border-color: grey;
 }
 
+.gametime-container,
+.gamenext-container {
+  height: 20%;
+}
+
+.gameword-container {
+  height: 60%;
+}
+
+.word {
+  text-align: center;
+  font-size: 4em;
+  margin-top: -1em;
+}
+
+.next-button {
+  float: right;
+  padding: 1em;
+  margin: 1em;
+}
+
 /* Navigation Bar Styles */
 
 .navigation-bar {

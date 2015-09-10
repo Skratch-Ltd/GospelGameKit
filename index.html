@@ -96,8 +96,9 @@
         <div class="center">Game</div>
       </ons-toolbar>
 
-      <div class="word" id="word_div"></div>
-      <button ng-click="nextWord()">Next</button>
+      <ons-row class="gametime-container"></ons-row>
+      <ons-row class="gameword-container" align="center"><ons-col class="word" id="word_div"></ons-col></ons-row>
+      <ons-row class="gamenext-container"><ons-col><button class="next-button" ng-click="nextWord()">Next</button></ons-col></ons-row>
 
     </ons-page>
   </ons-template>
