@@ -12,6 +12,11 @@
     localStorage.setItem("ggk-settings", JSON.stringify(settings));
   }
 
+  function shuffle(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+  }
+
   module.controller('AppController', function($scope, $data) {
     $scope.changeSound = function() {
       settings.sound = checkSound.checked;
@@ -62,13 +67,25 @@
 
   module.controller('GameController', function($scope, $data) {
     var index = 0;
-    word_div.innerHTML = topic.words[index];
+    var wordList = [];
+    if (topic.title != 'Hymns' && topic.title != 'Primary Songs') {
+      wordList = wordList.concat($data.words);
+    }
+    if (topic.title != 'Random') {
+      wordList = wordList.concat(topic.words);
+    } else {
+      for (var i = 0; i < $data.topics.length - 1; i++) {
+        wordList = wordList.concat($data.topics[i].words);
+      }
+    }
+    shuffle(wordList);
+    word_div.innerHTML = wordList[index];
 
     $scope.nextWord = function() {
       index++;
-      if (index == topic.words.length)
+      if (index == wordList.length)
         index = 0;
-      word_div.innerHTML = topic.words[index];
+      word_div.innerHTML = wordList[index];
     }
   });
 
