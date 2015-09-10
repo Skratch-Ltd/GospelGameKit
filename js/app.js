@@ -2,16 +2,42 @@
   'use strict';
   var module = angular.module('app', ['onsen']);
   var game, topic;
-  var settings = localStorage.getItem("ggk-settings") || {music: true, sound: true, instructions: true, timerLegth: 120};
-  localStorage.setItem("ggk-settings", settings);
+  var settings = JSON.parse(localStorage.getItem("ggk-settings")) || {music: true, sound: true, instructions: true, timerLegth: 120};
+  localStorage.setItem("ggk-settings", JSON.stringify(settings));
+  var bgMusic = new Audio('audio/countdown.mp3');
+  bgMusic.loop = true;
+  if (settings.music) bgMusic.play();
+
+  function updateSettings() {
+    localStorage.setItem("ggk-settings", JSON.stringify(settings));
+  }
 
   module.controller('AppController', function($scope, $data) {
-
-    $scope.doSomething = function() {
-      setTimeout(function() {
-        ons.notification.alert({ message: 'tapped' });
-      }, 100);
+    $scope.changeSound = function() {
+      settings.sound = checkSound.checked;
+      updateSettings();
     };
+
+    $scope.changeMusic = function() {
+      settings.music = checkMusic.checked;
+      updateSettings();
+      if (settings.music) {
+        bgMusic.play();
+      } else {
+        bgMusic.pause();
+      }
+    };
+
+    $scope.changeInstructions = function() {
+      settings.instructions = checkInstructions.checked;
+      updateSettings();
+    };
+
+    $scope.playSound = function(file) {
+      if (!settings.sound) return;
+      var audio = new Audio(file);
+      audio.play();
+    }
   });
 
   module.controller('TopicController', function($scope, $data) {
@@ -19,7 +45,11 @@
 
     $scope.showInstructions = function(index) {
       topic = $scope.topics[index];
-      $scope.navi.pushPage("instructions.html", {animation: "lift" });
+      if (settings.instructions) {
+        $scope.navi.pushPage("instructions.html", {animation: "lift" });
+      } else {
+        $scope.navi.pushPage("game.html", {animation: "lift" })
+      }
     }
   });
 
@@ -31,7 +61,6 @@
   });
 
   module.controller('GameController', function($scope, $data) {
-    debugger;
     var index = 0;
     word_div.innerHTML = topic.words[index];
 
@@ -61,6 +90,9 @@
 
     $scope.showPopover = function(e) {
       $scope.popover.show(e);
+      checkSound.checked = settings.sound;
+      checkMusic.checked = settings.music;
+      checkInstructions.checked = settings.instructions;
     }
   });
 
