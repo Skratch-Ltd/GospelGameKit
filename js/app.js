@@ -2,7 +2,12 @@
   'use strict';
   var module = angular.module('app', ['onsen']);
   var game, topic;
-  var settings = JSON.parse(localStorage.getItem("ggk-settings")) || {music: true, sound: true, instructions: true, timerLegth: 120};
+  var settings;
+  try {
+    settings = JSON.parse(localStorage.getItem("ggk-settings"));
+  } catch (e) {
+    settings = {music: true, sound: true, instructions: true, timerLegth: 120};
+  }
   localStorage.setItem("ggk-settings", JSON.stringify(settings));
   var bgMusic = new Audio('audio/countdown.mp3');
   bgMusic.loop = true;
