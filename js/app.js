@@ -73,14 +73,18 @@
   module.controller('GameController', function($scope, $data) {
     var index = 0;
     var wordList = [];
+    var addPhrases = game.title != 'Password';
     if (topic.title != 'Hymns' && topic.title != 'Primary Songs') {
       wordList = wordList.concat($data.words);
+      if (addPhrases) wordList = wordList.concat($data.phrases);
     }
     if (topic.title != 'Random') {
       wordList = wordList.concat(topic.words);
+      if (addPhrases) wordList = wordList.concat(topic.phrases);
     } else {
       for (var i = 0; i < $data.topics.length - 1; i++) {
         wordList = wordList.concat($data.topics[i].words);
+        if (addPhrases) wordList = wordList.concat($data.topics[i].phrases);
       }
     }
     shuffle(wordList);
@@ -149,40 +153,50 @@
       ];
 
       //Words that could be in all of the topic lists except for hymns and primary songs
-      data.words = ['Faith','Repentance','Baptism','Holy Ghost'];
+      data.words = ['Faith','Repentance','Baptism'];
+      //Phrases that could be in all of the topic lists except for hymns and primary songs
+      data.phrases = ['Holy Ghost'];
 
       data.topics = [
         {
           title: 'Book of Mormon',
-          words: ['1 Nephi','2 Nephi','Jacob','Enos','Jarom','Omni','Words of Mormon','Mosiah','Alma','Helaman','3 Nephi','4 Nephi','Mormon','Ether','Moroni']
+          words: ['1 Nephi','2 Nephi','Jacob','Enos','Jarom','Omni','Words of Mormon','Mosiah','Alma','Helaman','3 Nephi','4 Nephi','Mormon','Ether','Moroni'],
+          phrases: []
         },
         {
           title: 'Church History',
-          words: []
+          words: [],
+          phrases: []
         },
         {
           title: 'Doctrine and Covenants',
-          words: []
+          words: [],
+          phrases: []
         },
         {
           title: 'Hymns',
-          words: []
+          words: [],
+          phrases: []
         },
         {
           title: 'New Testament',
-          words: []
+          words: [],
+          phrases: []
         },
         {
           title: 'Old Testament',
-          words: []
+          words: [],
+          phrases: ['Battle of Jericho']
         },
         {
           title: 'Pearl of Great Price',
-          words: ['Moses','Abraham','Joseph Smith-Matthew','Joseph Smith-History','Articles of Faith']
+          words: ['Moses','Abraham','Joseph Smith-Matthew','Joseph Smith-History','Articles of Faith'],
+          phrases: []
         },
         {
           title: 'Primary Songs',
-          words: []
+          words: [],
+          phrases: []
         },
         {
           title: 'Random'
