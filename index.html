@@ -68,6 +68,11 @@
         <!-- TODO: Change to up arrow? -->
         <div class="left"><ons-back-button>Back</ons-back-button></div>
         <div class="center">Topics</div>
+        <div class="right">
+          <ons-toolbar-button id="topic-menu-button" ng-click="showPopover('#topic-menu-button')">
+            <ons-icon icon="fa-bars">
+          </ons-toolbar-button>
+        </div>
       </ons-toolbar>
 
       <ons-carousel class="carousel" id="topicCarousel" swipeable overscrollable auto-scroll item-width="30%" var="topicCarousel">
@@ -98,11 +103,16 @@
         <!-- TODO: Change to up arrow? -->
         <div class="left"><ons-back-button>Back</ons-back-button></div>
         <div class="center">Game</div>
+        <div class="right">
+          <ons-toolbar-button id="game-menu-button" ng-click="showPopover('#game-menu-button')">
+            <ons-icon icon="fa-bars">
+          </ons-toolbar-button>
+        </div>
       </ons-toolbar>
 
       <ons-row class="gametime-container"></ons-row>
       <ons-row class="gameword-container" align="center"><ons-col class="word" id="word_div"></ons-col></ons-row>
-      <ons-row class="gamenext-container"><ons-col><ons-button modifier="large" class="next-button" ng-click="nextWord()">Next</ons-button></ons-col></ons-row>
+      <ons-row class="gamenext-container"><ons-col><ons-button modifier="large" class="next-button" id="nextButton" ng-click="nextWord()">Next</ons-button></ons-col></ons-row>
 
     </ons-page>
   </ons-template>
@@ -114,10 +124,10 @@
       <ons-row class="list-row" align="center"><ons-col class="word" id="word_div"></ons-col></ons-row>
       <ons-row class="button-row">
         <ons-col>
-          <ons-button modifier="large" class="back-button" ng-click="back()">Next</ons-button>
+          <ons-button modifier="large" class="back-button" ng-click="back()">Back</ons-button>
           </ons-col>
           <ons-col>
-          <ons-button modifier="large" class="play-button" ng-click="play()">Play</ons-button>
+          <ons-button modifier="large" class="play-button" ng-click="play()">Play Again</ons-button>
         </ons-col>
       </ons-row>
 
@@ -138,7 +148,7 @@
         </ons-list-item>
         <ons-list-item>Timer Length</ons-list-item>
         <ons-list-item>
-          <label>1min <input type="range" class="range" min="60" max="180" step="20"> 3min</label>
+          <label>1min <input id="timerRange" type="range" class="range" min="60" max="180" step="20" ng-model="settings.timerLength" ng-change="changeTimerLength()""> 3min</label>
         </ons-list-item>
       </ons-list>
     </ons-popover>

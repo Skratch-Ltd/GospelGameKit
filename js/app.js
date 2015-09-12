@@ -43,10 +43,26 @@
       updateSettings();
     };
 
+    $scope.changeTimerLength = function() {
+      settings.timerLength = timerRange.value;
+      updateSettings();
+    }
+
     $scope.playSound = function(file) {
       if (!settings.sound) return;
       var audio = new Audio(file);
       audio.play();
+    }
+
+    ons.createPopover('popover.html').then(function(popover) {
+      $scope.popover = popover;
+    });
+
+    $scope.showPopover = function(e) {
+      $scope.popover.show(e);
+      checkSound.checked = settings.sound;
+      checkMusic.checked = settings.music;
+      checkInstructions.checked = settings.instructions;
     }
   });
 
@@ -94,8 +110,9 @@
       var transition;
       var timer = setTimeout(function() {
         word_div.innerHTML = 'TIMES UP!';
+        nextButton.remove();
         transition = setTimeout(function(){
-          $scope.navi.pushPage('results.html', {animation: 'lift'});
+          $scope.navi.replacePage('results.html', {animation: 'lift'});
         }, 2000);
       }, settings.timerLength * 100);//TODO: Change to 1000
       $scope.navi.off('prepop');
@@ -116,7 +133,14 @@
   });
 
   module.controller('ResultsController', function($scope, $data) {
+    $scope.back = function() {
+      $scope.navi.popPage();
+    }
 
+    $scope.play = function() {
+      $scope.navi.popPage();
+      $scope.navi.pushPage("game.html", {animation: "lift" });
+    }
   });
 
   module.controller('MasterController', function($scope, $data) {
@@ -129,17 +153,6 @@
 
     $scope.changeGame = function(index) {
       gameCarousel.setActiveCarouselItemIndex(index);
-    }
-
-    ons.createPopover('popover.html').then(function(popover) {
-      $scope.popover = popover;
-    });
-
-    $scope.showPopover = function(e) {
-      $scope.popover.show(e);
-      checkSound.checked = settings.sound;
-      checkMusic.checked = settings.music;
-      checkInstructions.checked = settings.instructions;
     }
   });
 
