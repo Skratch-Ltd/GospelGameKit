@@ -6,7 +6,7 @@
   try {
     settings = JSON.parse(localStorage.getItem("ggk-settings"));
   } catch (e) {
-    settings = {music: true, sound: true, instructions: true, timerLegth: 120};
+    settings = {music: true, sound: true, instructions: true, timerLength: 120};
   }
   localStorage.setItem("ggk-settings", JSON.stringify(settings));
   var bgMusic = new Audio('audio/countdown.mp3');
@@ -90,6 +90,23 @@
     shuffle(wordList);
     word_div.innerHTML = wordList[index];
 
+    if (game.title == 'Catch Phrase' || game.title == 'Heads Up') {
+      var transition;
+      var timer = setTimeout(function() {
+        word_div.innerHTML = 'TIMES UP!';
+        transition = setTimeout(function(){
+          $scope.navi.pushPage('results.html', {animation: 'lift'});
+        }, 2000);
+      }, settings.timerLength * 100);//TODO: Change to 1000
+      $scope.navi.off('prepop');
+      $scope.navi.on('prepop', function(event) {
+        if (event.currentPage.name == 'results.html') {
+          clearTimeout(transition);
+          clearTimeout(timer);
+        }
+      })
+    }
+
     $scope.nextWord = function() {
       index++;
       if (index == wordList.length)
@@ -99,7 +116,7 @@
   });
 
   module.controller('ResultsController', function($scope, $data) {
-    
+
   });
 
   module.controller('MasterController', function($scope, $data) {
