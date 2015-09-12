@@ -34,8 +34,8 @@ body {
 
 .item-icon {
   height: 120px;
-  width: 40%;
-  margin: 10px 30%;
+  width: 25%;
+  margin: 10px 37.5%;
   border-radius: 100%;
   display: inline-block;
 }
@@ -88,10 +88,15 @@ body {
 }
 
 .carousel {
-  /*background-color: rgb(190,190,190);*/
+  /*background-color: lightBlue;*/
   height: 90%;
-  width: 50%;
-  margin: 0 25%;
+  width: 100%;
+}
+
+#topicCarousel {
+  background-color: lightBlue;
+  margin: 10px;
+  width: 100%;
 }
 
 .checkbox {

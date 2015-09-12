@@ -27,14 +27,14 @@
 
 </head>
 
-<body ng-controller="AppController">
+<body ng-controller="AppController" >
   <!-- Cordova reference -->
   <script src="cordova.js"></script>
   <script src="scripts/index.js"></script>
   <!-- -->
 
   <ons-navigator var="navi">
-    <ons-page ng-controller="MasterController">
+    <ons-page ng-controller="MasterController" >
       <ons-toolbar>
         <div class="left">Gospel Game Kit</div>
         <div class="center"></div>
@@ -53,7 +53,7 @@
           <div class="item-desc">{{game.desc}}</div>
         </ons-carousel-item>
       </ons-carousel>
-      <div class="mini-carousel">
+      <div class="mini-carousel" >
         <div ng-repeat="n in [1,2,3,4]" class="mini-selector" ng-click="changeGame($index)"></div>
       </div>
     </ons-page>
@@ -68,7 +68,7 @@
         <div class="center">Topics</div>
       </ons-toolbar>
 
-      <ons-carousel class="carousel" swipeable overscrollable auto-scroll item-width="30%" var="topicCarousel">
+      <ons-carousel class="carousel" id="topicCarousel" swipeable overscrollable auto-scroll item-width="30%" var="topicCarousel">
         <ons-carousel-item ng-repeat="topic in topics" ng-click="showInstructions($index)">
           <!-- TODO: Replace the element below with the game select element -->
           <div class="item-title">{{topic.title}}</div>
