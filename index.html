@@ -68,10 +68,10 @@
         <div class="center">Topics</div>
       </ons-toolbar>
 
-      <ons-carousel class="carousel" id="topicCarousel" swipeable overscrollable auto-scroll item-width="30%" var="topicCarousel">
+      <ons-carousel class="carousel" swipeable overscrollable auto-scroll item-width="30%" var="topicCarousel">
         <ons-carousel-item ng-repeat="topic in topics" ng-click="showInstructions($index)">
           <!-- TODO: Replace the element below with the game select element -->
-          <div class="item-title">{{topic.title}}</div>
+          <div class="item-title" id="topicCarousel">{{topic.title}}</div>
         </ons-carousel-item>
       </ons-carousel>
 
@@ -98,7 +98,7 @@
 
       <ons-row class="gametime-container"></ons-row>
       <ons-row class="gameword-container" align="center"><ons-col class="word" id="word_div"></ons-col></ons-row>
-      <ons-row class="gamenext-container"><ons-col><button class="next-button" ng-click="nextWord()">Next</button></ons-col></ons-row>
+      <ons-row class="gamenext-container"><ons-col><ons-button modifier="large" class="next-button" ng-click="nextWord()">Next</ons-button></ons-col></ons-row>
 
     </ons-page>
   </ons-template>
@@ -110,8 +110,10 @@
       <ons-row class="list-row" align="center"><ons-col class="word" id="word_div"></ons-col></ons-row>
       <ons-row class="button-row">
         <ons-col>
-          <button class="back-button" ng-click="back()">Next</button>
-          <button class="play-button" ng-click="play()">Play</button>
+          <ons-button modifier="large" class="back-button" ng-click="back()">Next</ons-button>
+          </ons-col>
+          <ons-col>
+          <ons-button modifier="large" class="play-button" ng-click="play()">Play</ons-button>
         </ons-col>
       </ons-row>
 
