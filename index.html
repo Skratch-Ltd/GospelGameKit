@@ -103,6 +103,21 @@
     </ons-page>
   </ons-template>
 
+  <ons-template id="results.html">
+    <ons-page ng-controller="ResultsController">
+
+      <ons-row class="score-row" align="center"><ons-col>Score:</ons-col></ons-row>
+      <ons-row class="list-row" align="center"><ons-col class="word" id="word_div"></ons-col></ons-row>
+      <ons-row class="button-row">
+        <ons-col>
+          <button class="back-button" ng-click="back()">Next</button>
+          <button class="play-button" ng-click="play()">Play</button>
+        </ons-col>
+      </ons-row>
+
+    </ons-page>
+  </ons-template>
+
   <ons-template id="popover.html">
     <ons-popover direction="down" cancelable modifier="android">
       <ons-list>

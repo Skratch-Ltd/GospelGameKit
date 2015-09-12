@@ -98,6 +98,10 @@
     }
   });
 
+  module.controller('ResultsController', function($scope, $data) {
+    
+  });
+
   module.controller('MasterController', function($scope, $data) {
     $scope.games = $data.games;
 
