@@ -27,15 +27,15 @@ body {
 
 .item-label {
   text-align: center;
-  font-size: 28pt;
+  font-size: 1.5em;
   padding: 10px auto;
   font-weight: bold;
 }
 
 .item-icon {
   height: 120px;
-  width: 25%;
-  margin: 10px 37.5%;
+  width: 21%;
+  margin: 10px 39.5%;
   border-radius: 100%;
   display: inline-block;
 }
@@ -47,7 +47,7 @@ body {
 }
 
 .item-desc {
-  font-size: 1em;
+  font-size: 0.8em;
   color: #666;
   line-height: 1.3em;
   margin: 10px auto;
@@ -94,9 +94,22 @@ body {
 }
 
 #topicCarousel {
-  background-color: lightBlue;
-  margin: 10px;
+  /*background-color: gray;*/
+}
+
+#topicItem {
+  /*background-color: lightBlue;*/
   width: 100%;
+  position: relative;
+  top: 42%;
+  transform: translateY(-50%);
+}
+
+#topicItemContainer {
+  background-color: rgb(220,220,220);
+  width: 92%;
+  height: 100%;
+  margin-top: 10%;
 }
 
 .checkbox {
