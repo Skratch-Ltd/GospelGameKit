@@ -1,3 +1,6 @@
+
+/* Main Element Styles*/
+
 body {
   background-color: rgb(233,233,233);
   font-size: 40pt;
@@ -17,65 +20,6 @@ body {
   background-color: #ccc;
   width: 80%;
   border-radius: 4px;
-}
-
-.game-container {
-  width: 100%;
-  position: relative;
-  top: 45%;
-  transform: translateY(-50%);
-}
-
-.game-label {
-  text-align: center;
-  font-size: 4vw;
-  padding: 10px auto;
-  font-weight: bold;
-}
-
-.game-icon {
-  /*height: 120px;*/
-  width: 21%;
-  margin: 3% 39.5% 0;
-  border-radius: 100%;
-  display: inline-block;
-}
-
-.game-icon img {
-  width: 100%;
-  /*height: auto;*/
-  margin-bottom: 5%;
-}
-
-.game-desc {
-  font-size: 1.8vw;
-  color: #666;
-  line-height: 1.3em;
-  margin: 10px 10%;
-  /*max-width: 600px;*/
-  text-align: center;
-}
-
-#topicCarousel {
-  /*background-color: gray;*/
-}
-
-#topic-container {
-  background-color: rgb(220,220,220);
-  width: 92%;
-  height: 100%;
-  margin-top: 10%;
-}
-
-.topic-label {
-  font-size: 3.5vw;
-  font-weight: 500;
-  text-align: center;
-  width: 90%;
-  margin: 0 5%;
-  position: relative;
-  top: 42%;
-  transform: translateY(-50%);
 }
 
 .item-scroll {
@@ -111,9 +55,188 @@ body {
 }
 
 .carousel {
-  /*background-color: lightBlue;*/
   height: 90%;
   width: 100%;
+}
+
+
+
+
+
+
+
+
+/* Game Select VIew Styles */
+
+.game-container {
+  width: 100%;
+  position: relative;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.game-label {
+  text-align: center;
+  font-size: 4vw;
+  padding: 10px auto;
+  font-weight: bold;
+}
+
+.game-icon {
+  width: 21%;
+  margin: 3% 39.5% 0;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.game-icon img {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.game-desc {
+  font-size: 1.8vw;
+  color: #666;
+  line-height: 1.3em;
+  margin: 10px 10%;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+/* Topic Screen Styles */
+
+#topic-container {
+  background-color: rgb(220,220,220);
+  width: 92%;
+  height: 100%;
+  margin-top: 10%;
+}
+
+.topic-label {
+  font-size: 3.5vw;
+  font-weight: 500;
+  text-align: center;
+  width: 90%;
+  margin: 0 5%;
+  position: relative;
+  top: 42%;
+  transform: translateY(-50%);
+}
+
+
+
+
+
+
+
+
+/* Game View Styles */
+
+.gametime-container,
+.gamenext-container {
+  height: 20%;
+}
+
+.gameword-container {
+  height: 60%;
+}
+
+.score-row,
+.button-row {
+  height: 20%;
+}
+
+.list-row {
+  height: 60%;
+}
+
+.word-list {
+  height: 100%;
+  width: 100%;
+}
+
+.word-list_list {
+  height: 100%;
+  margin: 0 20px;
+}
+
+.score {
+  text-align: center;
+  font-size: 2em;
+}
+
+.word {
+  text-align: center;
+  font-size: 4em;
+  margin-top: -1em;
+}
+
+
+
+
+
+
+
+
+/* Game Button Styles */
+
+.button {
+  background-color: gray;
+  margin: 10px;
+  width: 90%
+}
+
+.next-button {
+  float: left;
+}
+
+.back-button {
+  float: right;
+  
+}
+
+.play-button {
+  float: left;
+}
+
+
+
+
+
+
+
+
+/* Navigation Bar Styles */
+
+.navigation-bar {
+  background-color: rgb(64,64,64);
+  border-top: solid 6px rgb(50,50,50);
+  height: 34px;
+}
+
+.navigation-bar__left {
+  padding-left: 10px;
+  letter-spacing: 1px;
+}
+
+.navigation-bar__title,
+.navigation-bar__left,
+.navigation-bar__right,
+.toolbar-button,
+.toolbar--outline,
+.toolbar-button--quiet,
+.ons-back-button__icon {
+  color: rgb(255,255,255);
+  font-size: 15px;
+  height: 20px;
+  line-height: 20px;
+  padding-top: 1px;
 }
 
 .checkbox {
@@ -163,79 +286,7 @@ ons-toolbar ~ .page__content {
   border-color: grey;
 }
 
-.gametime-container,
-.gamenext-container {
-  height: 20%;
-}
-
-.gameword-container {
-  height: 60%;
-}
-
-.score-row,
-.button-row {
-  height: 20%;
-}
-
-.list-row {
-  height: 60%;
-}
-
-.word-list {
-  height: 100%;
-  width: 100%;
-}
-
-.button-col {
-  margin: 0 20px;
-}
-
-.word-list_list {
-  height: 100%;
-  margin: 0 20px;
-}
-
-.score {
-  text-align: center;
-  font-size: 2em;
-}
-
-.word {
-  text-align: center;
-  font-size: 4em;
-  margin-top: -1em;
-}
-
-.next-button {
-  float: right;
-  padding: 1em;
-  margin: 1em;
-}
-
-/* Navigation Bar Styles */
-
-.navigation-bar {
-  background-color: rgb(64,64,64);
-  border-top: solid 6px rgb(50,50,50);
-  height: 34px;
-}
-
-.navigation-bar__left {
-  padding-left: 10px;
-  letter-spacing: 1px;
-}
-
-.navigation-bar__title,
-.navigation-bar__left,
-.navigation-bar__right,
-.toolbar-button,
-.toolbar--outline,
-.toolbar-button--quiet,
-.back-button__label,
-.ons-back-button__icon {
-  color: rgb(255,255,255);
-  font-size: 15px;
-  height: 20px;
-  line-height: 20px;
-  padding-top: 1px;
+.ion-ios-arrow-back:before {
+  font-size: 20px;
+  float: left;
 }
