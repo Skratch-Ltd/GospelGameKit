@@ -248,7 +248,7 @@ body {
 
 .back-button {
   float: right;
-  
+
 }
 
 .play-button {
@@ -308,7 +308,7 @@ body {
 .checkbox--noborder > .checkbox__checkmark {
   border: 1px solid grey;
   margin-top: 2px;
-  width: 15px;
+  width: 20px;
   height: 20px;
 }
 
