@@ -65,7 +65,8 @@
     <ons-page ng-controller="TopicController">
 
       <ons-toolbar>
-        <div class="left"><ons-icon icon="chevron-up" ng-click="navi.popPage()"></ons-icon></div>
+        <!-- TODO: Change to up arrow? -->
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
         <div class="center">Topics</div>
         <div class="right">
           <ons-toolbar-button id="topic-menu-button" ng-click="showPopover('#topic-menu-button')">
@@ -99,7 +100,8 @@
     <ons-page ng-controller="GameController">
 
       <ons-toolbar>
-        <div class="left"><ons-icon icon="chevron-up" ng-click="navi.popPage()"></ons-icon></div>
+        <!-- TODO: Change to up arrow? -->
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
         <div class="center">Game</div>
         <div class="right">
           <ons-toolbar-button id="game-menu-button" ng-click="showPopover('#game-menu-button')">
