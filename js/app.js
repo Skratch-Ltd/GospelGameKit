@@ -135,6 +135,13 @@
 
   module.controller('ResultsController', function($scope, $data) {
     $scope.playlist = $data.playlist;
+
+    if (game.title == 'Catch Phrase') {
+      scoreDiv.innerHTML = 'List';
+    } else if (game.title == 'Heads Up') {
+      scoreDiv.innerHTML = 'Score: ' + $data.headsUpScore;
+    }
+
     $scope.back = function() {
       $scope.navi.popPage();
     }
