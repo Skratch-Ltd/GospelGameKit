@@ -172,6 +172,34 @@ ons-toolbar ~ .page__content {
   height: 60%;
 }
 
+.score-row,
+.button-row {
+  height: 20%;
+}
+
+.list-row {
+  height: 60%;
+}
+
+.word-list {
+  height: 100%;
+  width: 100%;
+}
+
+.button-col {
+  margin: 0 20px;
+}
+
+.word-list_list {
+  height: 100%;
+  margin: 0 20px;
+}
+
+.score {
+  text-align: center;
+  font-size: 2em;
+}
+
 .word {
   text-align: center;
   font-size: 4em;

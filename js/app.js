@@ -109,6 +109,7 @@
     if (game.title == 'Catch Phrase' || game.title == 'Heads Up') {
       var transition;
       var timer = setTimeout(function() {
+        $data.playlist = wordList.slice(0, index + 1);
         word_div.innerHTML = 'TIMES UP!';
         nextButton.remove();
         transition = setTimeout(function(){
@@ -133,6 +134,7 @@
   });
 
   module.controller('ResultsController', function($scope, $data) {
+    $scope.playlist = $data.playlist;
     $scope.back = function() {
       $scope.navi.popPage();
     }
@@ -194,8 +196,8 @@
       data.topics = [
         {
           title: 'Book of Mormon',
-          words: ['1 Nephi','2 Nephi','Jacob','Enos','Jarom','Omni','Words of Mormon','Mosiah','Alma','Helaman','3 Nephi','4 Nephi','Mormon','Ether','Moroni','Coriantor','Lehi','Aaron','Abinadi','Adam','Alma the Younger','Amalickiah','Amlici','Amlicites','Ammaron','Ammon','Amulek','Amulon','Anti-Nephi-Lehies','King Benjamin','brother of Jared','Corianton','Coriantumr','Eve','freemen','Gideon','Hagoth','Helaman','Himni','Ishmael','Jacob','Jaredites','Joseph','Joseph Smith Jr.','king-men','Korihor','Laban','Laman','King Laman','Lamanites','King Lamoni','father of King Lamoni','Lehi','Lemuel','King Limhi','Mary','Captain Moroni','King Mosiah','Nehor','Nephi','Nephites','King Noah','Omner','Pahoran','Sam','Samuel the Lamanite','Sariah','Seantum','Seezoram','Sherem','Shiz','sons of Mosiah','Zeezrom','Zeniff','Zerahemnah','Zoram','Zoramites','Jesus Christ','Joseph Smith','altar','angel','arrow','armor','army','baptism','barge','believe','bless','blind','bondage','bow','brass plates','build','captain','club','commandment','covenant','crucify','deaf','destroy','disciple','dream','drunk','escape','eternal life','evil','faith','faithful','famine','fast','forgive','freedom','gold plates','gospel','Great Spirit','heal','heaven','humble','idol','iron rod','join','judge','judgement-seat','king','leader','Liahona','liberty','member','miracle','missionary','obey','ordain','ordinance','peace','persecute','plates','plot','power','pray','priesthood','prison','promise','prophesy','prophet','punish','rebel','repent','resurrect','righteous','robe','sacrament','sacrifice','scalp','servants','shield','sin','slaves','sling','soldier','spear','steal','stone','sword','synagogue','temple','testimony','title of liberty','tower','translate','tree of life','true','understand','Urim and Thummim','valiant','vision','war','weapon','wicked','wilderness','worship','America','Ammonihah','Babel','Bethlehem','Bountiful','Hill Cumorah','Jershon','Jerusalem','promised land','Sidom','Waters of Mormon','Zarahemla','white fruit','star','ship'],
-          phrases: ['Mormon father of Mormon','Mormon son of Mormon','Helaman father of Helaman','Alma the elder','Mosiah and Alma','1st and 2nd Nephi','Alma and Helaman','1st Nephi','Helaman son of Helaman','Alma the younger','filled with the Holy Ghost','glad tidings','traveling in the wilderness','buried by people of Ammon','Waters of Mormon','two thousand young warriors','tree of life','title of liberty','Jesus Christ touches stones','Spirit of God','sons','of Mosiah',"sign of Jesus Christ's death","sign of Jesus Christ's birth",'river of Sidon','Zerahemnah is scalped','prison walls fall for Alma and Amulek','pray for forgiveness','pray for help','pray for knowledge or guidance','pray for other people','pray for protection','pray to receive the Holy Ghost','pray for strength','the brass plates','the gold plates','plates of Jaredites','plates of Mormon','plates of Nephi','night without darkness','Nephites attack other Nephites','Nephites attack Lamanites','Nephites become slaves','Nephi breaks bow','brothers tie up Nephi','Nephi builds a ship','Jesus Christ visits Nephi','Nephi kills Laban','Nephi leads the Nephites','Nephi returns for the brass plates','Nephi son of Lehi and Sariah','mothers of 2000 young warriors','dreams of Lehi','Lehi finds the Liahona','Lehi told to leave Jerusalem','Lehi travels in the wilderness','Lehi warns Jerusalem to repent','father of King Lamoni','Lamanites attack the Nephites','Lamanites join the Church','Lamanites repent']
+          words: ['1 Nephi','2 Nephi','Jacob','Enos','Jarom','Omni','Words of Mormon','Mosiah','Alma','Helaman','3 Nephi','4 Nephi','Mormon','Ether','Moroni'],
+          phrases: []
         },
         {
           title: 'Church History',
