@@ -86,13 +86,29 @@
     </ons-page>
   </ons-template>
 
+
+
   <ons-template id="instructions.html">
+
+    <ons-toolbar>
+      <!-- TODO: Change to up arrow? -->
+      <div class="left"><ons-back-button></ons-back-button></div>
+      <div class="center">Instructions</div>
+      <div class="right">
+        <ons-toolbar-button id="instructions-menu-button" ng-click="showPopover('#instructions-menu-button')">
+          <ons-icon icon="fa-bars">
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+
     <ons-page ng-controller="InstructionController" ng-click="startGame()">
-
-      <img id="instructions_image">
-      <div class="instructions">Instructions</div>
-
+      <div class="instructions-container">
+        <!-- <img class="instructions_image"> -->
+        <div class="instructions">individual game instructions go here. fvb fvbfb dfbduw fw hiweh wef8ow viwvuisd vdfib. hsdg rbyug shbfu br hskv eue wcu verv.</div>
+        <div class="continue-text">Tap screen to continue</div>
+      </div>
     </ons-page>
+
   </ons-template>
 
   <ons-template id="game.html">

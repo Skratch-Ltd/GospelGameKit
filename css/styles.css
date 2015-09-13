@@ -77,7 +77,8 @@ body {
 
 .game-label {
   text-align: center;
-  font-size: 4vw;
+  /*font-size: 4vw;*/
+  font-size: 2em;
   padding: 10px auto;
   font-weight: bold;
 }
@@ -95,7 +96,8 @@ body {
 }
 
 .game-desc {
-  font-size: 1.8vw;
+  /*font-size: 1.8vw;*/
+  font-size: 0.8em;
   color: #666;
   line-height: 1.3em;
   margin: 10px 10%;
@@ -112,14 +114,18 @@ body {
 /* Topic Screen Styles */
 
 #topic-container {
-  background-color: rgb(220,220,220);
+  background-color: rgb(40,40,40);
+  color: rgb(230,230,230);
   width: 92%;
   height: 100%;
   margin-top: 10%;
+  overflow: hidden;
 }
 
 .topic-label {
-  font-size: 3.5vw;
+  /*font-family: serif;*/
+  /*font-size: 3.5vw;*/
+  font-size: 1.6em;
   font-weight: 500;
   text-align: center;
   width: 90%;
@@ -127,6 +133,9 @@ body {
   position: relative;
   top: 42%;
   transform: translateY(-50%);
+  border-top: 3px solid rgb(230,230,230);
+  border-bottom: 3px solid rgb(230,230,230);
+  padding: 10px 0;
 }
 
 
@@ -136,7 +145,45 @@ body {
 
 
 
-/* Game View Styles */
+/* Instruction View Styles */
+
+.instructions-container {
+  width: 80%;
+  height: 100%;
+  margin: 0 10%;
+  text-align: center;
+}
+
+.instructions {
+  font-size: 1.6em;
+  text-align: center;
+  position: relative;
+  top: 48%;
+  transform: translateY(-60%);
+}
+
+/*.instructions_image {
+  margin: 0 20% 2%;
+  background-color: gray;
+  width: 60%;
+  height: 400px;
+}*/
+
+.continue-text {
+  bottom: 10px;
+  position: fixed;
+  display: block;
+  margin: 0 15%;
+  width: 50%;
+}
+
+
+
+
+
+
+
+/* Game / Results View Styles */
 
 .gametime-container,
 .gamenext-container {
@@ -145,6 +192,8 @@ body {
 
 .gameword-container {
   height: 60%;
+  width: 90%;
+  margin: 0 5%
 }
 
 .score-row,
@@ -164,6 +213,7 @@ body {
 .word-list_list {
   height: 100%;
   margin: 0 20px;
+  background-color: white;
 }
 
 .score {
@@ -173,7 +223,7 @@ body {
 
 .word {
   text-align: center;
-  font-size: 4em;
+  font-size: 3em;
   margin-top: -1em;
 }
 
