@@ -52,10 +52,11 @@
             <div class="game-icon"><img src="{{game.icon}}"></img></div>
             <div class="game-label">{{game.title}}</div>
             <div class="game-desc">{{game.desc}}</div>
+            <!-- <div class="game-color" style="border-color: {{game.color}}"></div> -->
           </div>
         </ons-carousel-item>
       </ons-carousel>
-      <div class="mini-carousel" >
+      <div class="mini-carousel">
         <div ng-repeat="n in [1,2,3,4]" class="mini-selector" ng-click="changeGame($index)"></div>
       </div>
     </ons-page>
