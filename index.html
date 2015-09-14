@@ -92,7 +92,7 @@
 
     <ons-toolbar>
       <!-- TODO: Change to up arrow? -->
-      <div class="left"><ons-back-button></ons-back-button></div>
+      <div class="left"><ons-icon icon="chevron-up" ng-click="navi.popPage()"></ons-icon></div>
       <div class="center">Instructions</div>
       <div class="right">
         <ons-toolbar-button id="instructions-menu-button" ng-click="showPopover('#instructions-menu-button')">
@@ -104,7 +104,7 @@
     <ons-page ng-controller="InstructionController" ng-click="startGame()">
       <div class="instructions-container">
         <!-- <img class="instructions_image"> -->
-        <div class="instructions">individual game instructions go here. fvb fvbfb dfbduw fw hiweh wef8ow viwvuisd vdfib. hsdg rbyug shbfu br hskv eue wcu verv.</div>
+        <div class="instructions">{{game.instructions}}</div>
         <div class="continue-text">Tap screen to continue</div>
       </div>
     </ons-page>
