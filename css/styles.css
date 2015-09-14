@@ -230,7 +230,7 @@ body {
 }
 
 .list__item {
-  
+
 }
 
 .word-list {
@@ -286,10 +286,9 @@ body {
   float: left;
 }
 
-
-
-
-
+.ons-icon {
+  font-size: 1em;
+}
 
 
 
@@ -365,6 +364,12 @@ body {
 
 ons-toolbar ~ .page__content {
   top: 10%;
+}
+
+#timerRange {
+  position: relative;
+  top: 5px;
+  width: 100%;
 }
 
 .popover__top-arrow {

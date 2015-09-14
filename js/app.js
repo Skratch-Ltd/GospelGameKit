@@ -149,8 +149,10 @@
     }
 
     $scope.play = function() {
-      $scope.navi.popPage();
-      $scope.navi.pushPage("game.html", {animation: "lift" });
+      $scope.navi.pushPage("game.html", {animation: "lift", onTransitionEnd: function() {
+        var pages = $scope.navi.getPages();
+        pages[pages.length - 2].destroy();
+      }});
     }
   });
 
@@ -165,6 +167,13 @@
     $scope.changeGame = function(index) {
       gameCarousel.setActiveCarouselItemIndex(index);
     }
+    /*Puts color line at bottom of home page
+      works, but looks laggy when changing color
+    ons.ready(function() {
+      gameCarousel.on('postchange', function(event) {
+        homePage.style.borderColor = $scope.games[event.activeIndex].color;
+      });
+    });*/
   });
 
   module.factory('$data', function() {

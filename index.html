@@ -34,7 +34,7 @@
   <!-- -->
 
   <ons-navigator var="navi">
-    <ons-page ng-controller="MasterController" >
+    <ons-page ng-controller="MasterController">
       <ons-toolbar>
         <div class="left">Gospel Game Kit</div>
         <div class="center"></div>
@@ -160,7 +160,7 @@
   </ons-template>
 
   <ons-template id="popover.html">
-    <ons-popover direction="down" cancelable modifier="android">
+    <ons-popover direction="down" cancelable modifier="android" style="width: 300px">
       <ons-list>
         <ons-list-item>
           <label class="checkbox checkbox--noborder" ng-click="changeSound()">Sound<input id="checkSound" type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
@@ -172,9 +172,11 @@
           <label class="checkbox checkbox--noborder" ng-click="changeInstructions()">Instructions<input id="checkInstructions" type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
         </ons-list-item>
         <ons-list-item>Timer Length</ons-list-item>
-        <ons-list-item>
-          <label>1min <input id="timerRange" type="range" min="60" max="180" step="20" ng-model="settings.timerLength" ng-change="changeTimerLength()"> 3min</label>
-        </ons-list-item>
+        <ons-list-item><ons-row>
+          <ons-col width="20%">1min</ons-col>
+          <ons-col width="60%" align="center"><input id="timerRange" type="range" class="center" min="60" max="180" step="20" ng-model="settings.timerLength" ng-change="changeTimerLength()"></ons-col>
+          <ons-col width="20%" style="text-align: right;">3min</ons-col>
+        </ons-row></ons-list-item>
       </ons-list>
     </ons-popover>
   </ons-template>
