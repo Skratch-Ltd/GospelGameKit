@@ -306,6 +306,18 @@ body {
   letter-spacing: 1px;
 }
 
+.navigation-bar__center {
+  float: none;
+  margin: 0 auto;
+}
+
+.navigation-bar__right {
+  position: absolute;
+  float: right;
+  right: 0;
+  top: -2px;
+}
+
 .navigation-bar__title,
 .navigation-bar__left,
 .navigation-bar__right,
