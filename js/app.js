@@ -3,9 +3,8 @@
   var module = angular.module('app', ['onsen']);
   var game, topic;
   var settings;
-  try {
-    settings = JSON.parse(localStorage.getItem("ggk-settings"));
-  } catch (e) {
+  settings = JSON.parse(localStorage.getItem("ggk-settings"));
+  if (!settings) {
     settings = {music: true, sound: true, instructions: true, timerLength: 120};
   }
   localStorage.setItem("ggk-settings", JSON.stringify(settings));
