@@ -3,7 +3,7 @@
 
 body {
   background-color: rgb(233,233,233);
-  font-size: 40pt;
+  font-size: 70%;;
 }
 
 .card {
@@ -72,46 +72,30 @@ body {
 
 /* Game Select VIew Styles */
 
-.game-container {
-  width: 100%;
+#icon-container{
   position: relative;
-  top: 45%;
-  transform: translateY(-50%);
+  margin: 4% 0 0 0;
 }
 
-.game-label {
-  text-align: center;
-  font-size: 5vw;
-  /*font-size: 2em;*/
-  padding: 10px auto;
+#label-container{
+  font-size: 1.8rem;
   font-weight: bold;
+  position: relative;
+  padding: 5px 0;
 }
 
-.game-icon {
-  border-radius: 100%;
-  display: inline-block;
-  margin: 2% 39.5% 0;
-  width: 21%;
+#desc-container{
+  color: #666;
+  font-size: 1rem;
+  position: relative;
 }
 
 .game-icon img {
   width: 100%;
-  margin-bottom: 5%;
+  /*margin-bottom: 10%;*/
 }
 
-.game-desc {
-  font-size: 2vw;
-  /*font-size: 0.8em;*/
-  color: #666;
-  line-height: 1.3em;
-  margin: 10px 10%;
-  text-align: center;
-}
 
-/*.game-color {
-  border-bottom: 5px solid;
-  width: 100%;
-}*/
 
 
 
@@ -122,41 +106,27 @@ body {
 
 /* Topic Screen Styles */
 
-#topic-container {
+#topicCarousel {
+  position: relative;
+  margin: 5% 0 0 0;
+  height: 100%;
+}
+
+.topic-container {
   background-color: rgb(120,120,120);
   box-shadow: 10px 10px 40px rgba(0,0,0,0.5);
   color: rgb(240,240,240);
-  width: 90%;
   height: 80%;
-  margin-top: 10%;
-  overflow: hidden;
-}
-
-.topic-label {
-  font-size: 3.5vw;
-  /*font-size: 1.6em;*/
-  font-weight: 500;
-  text-align: center;
   width: 90%;
-  margin: 0 5%;
-  position: relative;
-  top: 42%;
-  transform: translateY(-50%);
-  border-top: 3px solid rgb(240,240,240);
+}
+
+.topic-title {
   border-bottom: 3px solid rgb(240,240,240);
+  border-top: 3px solid rgb(240,240,240);
+  font-size: 1.5rem;
   padding: 10px 0;
-}
-
-#topic-container:active,
-.topic-label:active,
- #topic-container:hover,
- .topic-label:hover{
-  background-color: rgb(80,80,80);
-  cursor: pointer;
-}
-
-#topicCarousel {
-  height: 100%;
+  margin: 0 5%;
+  width: 90%;
 }
 
 
@@ -168,37 +138,16 @@ body {
 
 /* Instruction View Styles */
 
-.instructions-container {
-  width: 80%;
-  height: 100%;
-  margin: 0 10%;
-  text-align: center;
-}
-
-.instructions {
-  font-size: 4vw;
-  /*font-size: 1.6em;*/
-  text-align: center;
+#instruction-container {
+  font-size: 1.6rem;
+  height: 80%;
   position: relative;
-  top: 48%;
-  transform: translateY(-60%);
+  margin: 5% 0 0 0;
 }
 
-/*.instructions_image {
-  margin: 0 20% 2%;
-  background-color: gray;
-  width: 60%;
-  height: 400px;
-}*/
-
-.continue-text {
-  bottom: 10px;
-  font-size: 2.5vw;
-  font-weight: 300;
-  position: fixed;
-  display: block;
-  margin: 0 15%;
-  width: 50%;
+#continue-container {
+  font-size: 0.8rem;
+  height: 20%;
 }
 
 
@@ -230,7 +179,7 @@ body {
 }
 
 .list__item {
-
+  font-size: 1em;
 }
 
 .word-list {
@@ -239,7 +188,7 @@ body {
 }
 
 .word-list_list {
-  font-size: 3vw;
+  font-size: 1.5rem;
   height: 100%;
   margin: 0 20px;
   background-color: rgb(255,255,255);
@@ -247,14 +196,12 @@ body {
 
 .score {
   text-align: center;
-  font-size: 5vw;
-  /*font-size: 2em;*/
+  font-size: 2rem;
 }
 
 .word {
   text-align: center;
-  font-size: 7vw;
-  /*font-size: 3em;*/
+  font-size: 3rem;
   margin-top: -1em;
 }
 
@@ -286,9 +233,7 @@ body {
   float: left;
 }
 
-.ons-icon {
-  font-size: 1em;
-}
+
 
 
 
@@ -297,38 +242,20 @@ body {
 .navigation-bar {
   background-color: rgb(64,64,64);
   border-top: solid 6px rgb(50,50,50);
-  height: 34px;
+}
+
+.navigation-bar__left,
+.navigation-bar__center,
+.navigation-bar__right,
+.ons-icon {
+  color: white;
+  margin-top: -6px;
 }
 
 .navigation-bar__left {
-  padding-left: 10px;
-  letter-spacing: 1px;
-}
-
-.navigation-bar__center {
-  float: none;
-  margin: 0 auto;
-}
-
-.navigation-bar__right {
-  position: absolute;
-  float: right;
-  right: 0;
-  top: -2px;
-}
-
-.navigation-bar__title,
-.navigation-bar__left,
-.navigation-bar__right,
-.toolbar-button,
-.toolbar--outline,
-.toolbar-button--quiet,
-.ons-back-button__icon {
-  color: rgb(255,255,255);
-  font-size: 15px;
-  height: 20px;
-  line-height: 20px;
-  padding-top: 1px;
+  letter-spacing: 0.5px;
+  line-height: 44px;
+  padding-left: 8px;
 }
 
 .checkbox {
@@ -385,6 +312,6 @@ ons-toolbar ~ .page__content {
 }
 
 .ion-ios-arrow-back:before {
-  font-size: 20px;
+  font-size: 2.5rem;
   float: left;
 }

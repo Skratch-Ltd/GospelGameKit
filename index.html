@@ -31,10 +31,15 @@
   <!-- Cordova reference -->
   <script src="cordova.js"></script>
   <script src="scripts/index.js"></script>
-  <!-- -->
+
+
+
+
+
 
   <ons-navigator var="navi">
     <ons-page ng-controller="MasterController">
+
       <ons-toolbar>
         <div class="left">Gospel Game Kit</div>
         <div class="center"></div>
@@ -47,13 +52,31 @@
 
       <ons-carousel class="carousel" swipeable overscrollable auto-scroll auto-scroll-ratio="0.2" var="gameCarousel">
         <ons-carousel-item ng-repeat="game in games" ng-click="showTopic($index)">
-          <!-- TODO: Replace the element below with the game select element -->
-          <div class="game-container">
-            <div class="game-icon"><img src="{{game.icon}}"></img></div>
-            <div class="game-label">{{game.title}}</div>
-            <div class="game-desc">{{game.desc}}</div>
-            <!-- <div class="game-color" style="border-color: {{game.color}}"></div> -->
-          </div>
+
+
+          <ons-row id="icon-container">
+            <ons-col width="40%"></ons-col>
+            <ons-col align="middle" width="20%">
+              <div class="game-icon"><img src="{{game.icon}}"></img></div>
+            </ons-col>
+            <ons-col width="40%"></ons-col>
+          </ons-row>
+          <ons-row id="label-container">
+            <ons-col width="10%"></ons-col>
+            <ons-col align="middle" width="80%">
+              <div class="game-label">{{game.title}}</div>
+            </ons-col>
+            <ons-col width="10%"></ons-col>
+          </ons-row>
+          <ons-row id="desc-container">
+            <ons-col width="10%"></ons-col>
+            <ons-col align="middle" width="80%">
+              <div class="game-desc">{{game.desc}}</div>
+            </ons-col>
+            <ons-col width="10%"></ons-col>
+          </ons-row>
+
+
         </ons-carousel-item>
       </ons-carousel>
       <div class="mini-carousel">
@@ -62,11 +85,16 @@
     </ons-page>
   </ons-navigator>
 
+
+
+
+
+
   <ons-template id="topics.html">
     <ons-page ng-controller="TopicController">
 
       <ons-toolbar>
-        <div class="left"><ons-icon icon="chevron-up" ng-click="navi.popPage()"></ons-icon></div>
+        <div class="left"><ons-icon icon="chevron-down" ng-click="navi.popPage()"></ons-icon></div>
         <div class="center">Topics</div>
         <div class="right">
           <ons-toolbar-button id="topic-menu-button" ng-click="showPopover('#topic-menu-button')">
@@ -77,23 +105,29 @@
 
       <ons-carousel class="carousel" id="topicCarousel" swipeable overscrollable auto-scroll item-width="30%" var="topicCarousel">
         <ons-carousel-item ng-repeat="topic in topics" ng-click="showInstructions($index)">
-          <!-- TODO: Replace the element below with the game select element -->
-          <div id="topic-container">
-            <div class="topic-label">{{topic.title}}</div>
-          </div>
+
+
+              <ons-row class="topic-container" align="center">
+                <ons-col align="middle" width="100%">
+                  <div class="topic-title">{{topic.title}}</div>
+                </ons-col>
+              </ons-row>
+
+
         </ons-carousel-item>
       </ons-carousel>
-
     </ons-page>
   </ons-template>
+
+
+
 
 
 
   <ons-template id="instructions.html">
 
     <ons-toolbar>
-      <!-- TODO: Change to up arrow? -->
-      <div class="left"><ons-icon icon="chevron-up" ng-click="navi.popPage()"></ons-icon></div>
+      <div class="left"><ons-icon icon="chevron-down" ng-click="navi.popPage()"></ons-icon></div>
       <div class="center">Instructions</div>
       <div class="right">
         <ons-toolbar-button id="instructions-menu-button" ng-click="showPopover('#instructions-menu-button')">
@@ -103,20 +137,37 @@
     </ons-toolbar>
 
     <ons-page ng-controller="InstructionController" ng-click="startGame()">
-      <div class="instructions-container">
-        <!-- <img class="instructions_image"> -->
-        <div class="instructions">{{game.instructions}}</div>
-        <div class="continue-text">Tap screen to continue</div>
-      </div>
-    </ons-page>
 
+
+      <ons-row id="instruction-container" align="center">
+        <ons-col width="10%"></ons-col>
+        <ons-col width="80%" align="middle">
+          <div class="instructions">{{game.instructions}}</div>
+        </ons-col>
+        <ons-col width="10%"></ons-col>
+      </ons-row>
+      <ons-row id="continue-container" align="top">
+        <ons-col width="10%"></ons-col>
+        <ons-col width="80%" align="middle">
+          <div class="continue-text">Tap screen to continue</div>
+        </ons-col>
+        <ons-col width="10%"></ons-col>
+      </ons-row>
+
+
+    </ons-page>
   </ons-template>
+
+
+
+
+
 
   <ons-template id="game.html">
     <ons-page ng-controller="GameController">
 
       <ons-toolbar>
-        <div class="left"><ons-icon icon="chevron-up" ng-click="navi.popPage()"></ons-icon></div>
+        <div class="left"><ons-icon icon="chevron-down" ng-click="navi.popPage()"></ons-icon></div>
         <div class="center">Game</div>
         <div class="right">
           <ons-toolbar-button id="game-menu-button" ng-click="showPopover('#game-menu-button')">
@@ -135,6 +186,11 @@
 
     </ons-page>
   </ons-template>
+
+
+
+
+
 
   <ons-template id="results.html">
     <ons-page ng-controller="ResultsController">
@@ -158,6 +214,11 @@
 
     </ons-page>
   </ons-template>
+
+
+
+
+
 
   <ons-template id="popover.html">
     <ons-popover direction="down" cancelable modifier="android" style="width: 300px">
