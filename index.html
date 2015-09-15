@@ -45,7 +45,7 @@
         </div>
       </ons-toolbar>
 
-      <ons-carousel class="carousel" swipeable overscrollable auto-scroll var="gameCarousel">
+      <ons-carousel class="carousel" swipeable overscrollable auto-scroll auto-scroll-ratio="0.2" var="gameCarousel">
         <ons-carousel-item ng-repeat="game in games" ng-click="showTopic($index)">
           <!-- TODO: Replace the element below with the game select element -->
           <div class="game-container">
