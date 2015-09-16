@@ -183,6 +183,10 @@ body {
   height: 90%;
 }
 
+.page__content {
+  overflow: hidden;
+}
+
 .game-select-container {
   height: 100%;
 }

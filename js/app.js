@@ -107,14 +107,14 @@
       }
     }
     shuffle(wordList);
-    word_div.innerHTML = wordList[index];
+    document.getElementById('word_div').innerHTML = wordList[index];
 
     if (game.title == 'Catch Phrase' || game.title == 'Heads Up') {
       var transition;
       var timer = setTimeout(function() {
         $data.playlist = wordList.slice(0, index + 1);
-        word_div.innerHTML = 'TIMES UP!';
-        nextButton.remove();
+        document.getElementById('word_div').innerHTML = 'TIMES UP!';
+        document.getElementById('nextButton').style.display = 'none'
         transition = setTimeout(function(){
           $scope.navi.replacePage('results.html', {animation: 'lift'});
         }, 2000);
@@ -132,7 +132,7 @@
       index++;
       if (index == wordList.length)
         index = 0;
-      word_div.innerHTML = wordList[index];
+      document.getElementById('word_div').innerHTML = wordList[index];
     }
   });
 
@@ -150,6 +150,7 @@
     }
 
     $scope.play = function() {
+      //$scope.navi.popPage();
       $scope.navi.pushPage("game.html", {animation: "lift", onTransitionEnd: function() {
         var pages = $scope.navi.getPages();
         pages[pages.length - 2].destroy();
