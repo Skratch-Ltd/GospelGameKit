@@ -32,16 +32,11 @@
   <script src="cordova.js"></script>
   <script src="scripts/index.js"></script>
 
-
-
-
-
-
   <ons-navigator var="navi">
     <ons-page ng-controller="MasterController">
 
       <ons-toolbar>
-        <div class="left">Gospel Game Kit</div>
+        <div class="left left-padding">Gospel Game Kit</div>
         <div class="center"></div>
         <div class="right">
           <ons-toolbar-button id="menu-button" ng-click="showPopover('#menu-button')">
@@ -53,34 +48,37 @@
       <ons-carousel class="carousel" swipeable overscrollable auto-scroll auto-scroll-ratio="0.2" var="gameCarousel">
         <ons-carousel-item ng-repeat="game in games" ng-click="showTopic($index)">
 
-
-          <ons-row id="icon-container">
-            <ons-col width="40%"></ons-col>
-            <ons-col align="middle" width="20%">
-              <div class="game-icon"><img src="{{game.icon}}"></img></div>
+          <ons-row align="center" class="game-select-container">
+            <ons-col>
+              <ons-row id="icon-container">
+                <ons-col width="40%"></ons-col>
+                <ons-col align="middle" width="20%">
+                  <div class="game-icon"><img src="{{game.icon}}"></img></div>
+                </ons-col>
+                <ons-col width="40%"></ons-col>
+              </ons-row>
+              <ons-row id="label-container">
+                <ons-col width="10%"></ons-col>
+                <ons-col align="middle" width="80%">
+                  <div class="game-label">{{game.title}}</div>
+                </ons-col>
+                <ons-col width="10%"></ons-col>
+              </ons-row>
+              <ons-row id="desc-container">
+                <ons-col width="10%"></ons-col>
+                <ons-col align="middle" width="80%">
+                  <div class="game-desc">{{game.desc}}</div>
+                </ons-col>
+                <ons-col width="10%"></ons-col>
+              </ons-row>
             </ons-col>
-            <ons-col width="40%"></ons-col>
           </ons-row>
-          <ons-row id="label-container">
-            <ons-col width="10%"></ons-col>
-            <ons-col align="middle" width="80%">
-              <div class="game-label">{{game.title}}</div>
-            </ons-col>
-            <ons-col width="10%"></ons-col>
-          </ons-row>
-          <ons-row id="desc-container">
-            <ons-col width="10%"></ons-col>
-            <ons-col align="middle" width="80%">
-              <div class="game-desc">{{game.desc}}</div>
-            </ons-col>
-            <ons-col width="10%"></ons-col>
-          </ons-row>
-
 
         </ons-carousel-item>
       </ons-carousel>
+
       <div class="mini-carousel">
-        <div ng-repeat="n in [1,2,3,4]" class="mini-selector" ng-click="changeGame($index)"></div>
+        <div ng-repeat="game in games" class="mini-selector" ng-click="changeGame($index)"></div>
       </div>
     </ons-page>
   </ons-navigator>
@@ -94,7 +92,7 @@
     <ons-page ng-controller="TopicController">
 
       <ons-toolbar>
-        <div class="left"><ons-icon icon="chevron-down" ng-click="navi.popPage()"></ons-icon></div>
+        <div class="left"><div class="back-button-container" ng-click="navi.popPage()"><ons-icon icon="chevron-up"></ons-icon></div></div>
         <div class="center">Topics</div>
         <div class="right">
           <ons-toolbar-button id="topic-menu-button" ng-click="showPopover('#topic-menu-button')">
@@ -126,34 +124,34 @@
 
   <ons-template id="instructions.html">
 
-    <ons-toolbar>
-      <div class="left"><ons-icon icon="chevron-down" ng-click="navi.popPage()"></ons-icon></div>
-      <div class="center">Instructions</div>
-      <div class="right">
-        <ons-toolbar-button id="instructions-menu-button" ng-click="showPopover('#instructions-menu-button')">
-          <ons-icon icon="fa-bars">
-        </ons-toolbar-button>
+    <ons-page ng-controller="InstructionController">
+      <ons-toolbar>
+        <div class="left"><div class="back-button-container" ng-click="navi.popPage()"><ons-icon icon="chevron-up"></ons-icon></div></div>
+        <div class="center">Instructions</div>
+        <div class="right">
+          <ons-toolbar-button id="instructions-menu-button" ng-click="showPopover('#instructions-menu-button')">
+            <ons-icon icon="fa-bars">
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+
+
+      <div ng-click="startGame()" class="page-container">
+        <ons-row id="instruction-container" align="center">
+          <ons-col width="10%"></ons-col>
+          <ons-col width="80%" align="middle">
+            <div class="instructions">{{game.instructions}}</div>
+          </ons-col>
+          <ons-col width="10%"></ons-col>
+        </ons-row>
+        <ons-row id="continue-container" align="top">
+          <ons-col width="10%"></ons-col>
+          <ons-col width="80%" align="middle">
+            <div class="continue-text">Tap screen to continue</div>
+          </ons-col>
+          <ons-col width="10%"></ons-col>
+        </ons-row>
       </div>
-    </ons-toolbar>
-
-    <ons-page ng-controller="InstructionController" ng-click="startGame()">
-
-
-      <ons-row id="instruction-container" align="center">
-        <ons-col width="10%"></ons-col>
-        <ons-col width="80%" align="middle">
-          <div class="instructions">{{game.instructions}}</div>
-        </ons-col>
-        <ons-col width="10%"></ons-col>
-      </ons-row>
-      <ons-row id="continue-container" align="top">
-        <ons-col width="10%"></ons-col>
-        <ons-col width="80%" align="middle">
-          <div class="continue-text">Tap screen to continue</div>
-        </ons-col>
-        <ons-col width="10%"></ons-col>
-      </ons-row>
-
 
     </ons-page>
   </ons-template>
@@ -167,8 +165,8 @@
     <ons-page ng-controller="GameController">
 
       <ons-toolbar>
-        <div class="left"><ons-icon icon="chevron-down" ng-click="navi.popPage()"></ons-icon></div>
-        <div class="center">Game</div>
+        <div class="left"><div class="back-button-container" ng-click="navi.popPage()"><ons-icon icon="chevron-up"></ons-icon></div></div>
+        <div class="center">{{game.title}}</div>
         <div class="right">
           <ons-toolbar-button id="game-menu-button" ng-click="showPopover('#game-menu-button')">
             <ons-icon icon="fa-bars">

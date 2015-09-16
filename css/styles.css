@@ -72,11 +72,6 @@ body {
 
 /* Game Select VIew Styles */
 
-#icon-container{
-  position: relative;
-  margin: 4% 0 0 0;
-}
-
 #label-container{
   font-size: 1.8rem;
   font-weight: bold;
@@ -87,20 +82,11 @@ body {
 #desc-container{
   color: #666;
   font-size: 1rem;
-  position: relative;
 }
 
 .game-icon img {
   width: 100%;
-  /*margin-bottom: 10%;*/
 }
-
-
-
-
-
-
-
 
 
 
@@ -129,11 +115,9 @@ body {
   width: 90%;
 }
 
-
-
-
-
-
+ons-carousel-item {
+  padding-left: 0.8rem;
+}
 
 
 /* Instruction View Styles */
@@ -205,9 +189,13 @@ body {
   margin-top: -1em;
 }
 
+.page-container {
+  height: 90%;
+}
 
-
-
+.game-select-container {
+  height: 100%;
+}
 
 
 
@@ -255,7 +243,15 @@ body {
 .navigation-bar__left {
   letter-spacing: 0.5px;
   line-height: 44px;
-  padding-left: 8px;
+}
+
+.back-button-container {
+  width: 20%;
+  padding-left: 0.8rem;
+}
+
+.left-padding {
+  padding-left: 0.8rem;
 }
 
 .checkbox {

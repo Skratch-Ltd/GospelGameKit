@@ -88,6 +88,7 @@
   });
 
   module.controller('GameController', function($scope, $data) {
+    $scope.game = game;
     var index = 0;
     var wordList = [];
     var addPhrases = game.title != 'Password';
@@ -120,11 +121,11 @@
       }, settings.timerLength * 100);//TODO: Change to 1000
       $scope.navi.off('prepop');
       $scope.navi.on('prepop', function(event) {
-        if (event.currentPage.name == 'results.html') {
+        if (event.currentPage.name == 'game.html') {
           clearTimeout(transition);
           clearTimeout(timer);
         }
-      })
+      });
     }
 
     $scope.nextWord = function() {
@@ -200,14 +201,14 @@
               desc: 'Get your team to guess the password by giving a one word clue. If your team is unsuccessful then the next team has a turn. Each wrong guess reduces the amount of points awarded to the winning team.',
               color: 'rgb(0,184,241)',
               instructions: 'Get your team to guess the password by giving a one word clue. If your team is unsuccessful then the next team has a turn. Each wrong guess reduces the amount of points awarded to the winning team.'
-          },
+          }/*,
           {
               icon: 'images/heads-up-icon.png',
               title: 'Heads Up',
               desc: 'Your team gets you to guess the phrase without using any of the words in the phrase. Guess as many as you can in the time limit. Tilt the screen forward for a correct guess or tilt it back to pass.',
               color: 'rgb(252,184,19)',
               instructions: 'Your team gets you to guess the phrase without using any of the words in the phrase. Guess as many as you can in the time limit. Tilt the screen forward for a correct guess or tilt it back to pass.'
-          }
+          }*/
       ];
 
       //Words that could be in all of the topic lists except for hymns and primary songs
