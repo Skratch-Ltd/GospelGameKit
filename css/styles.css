@@ -1,5 +1,5 @@
 
-/* Main Element Styles*/
+
 
 body {
   background-color: rgb(233,233,233);
@@ -70,7 +70,7 @@ body {
 
 
 
-/* Game Select VIew Styles */
+
 
 #label-container{
   font-size: 1.8rem;
@@ -90,7 +90,7 @@ body {
 
 
 
-/* Topic Screen Styles */
+
 
 #topicCarousel {
   position: relative;
@@ -115,13 +115,6 @@ body {
   width: 90%;
 }
 
-/*ons-carousel-item {
-  padding-left: 0.8rem;
-}*/
-
-
-/* Instruction View Styles */
-
 #instruction-container {
   font-size: 1.6rem;
   height: 80%;
@@ -138,9 +131,6 @@ body {
 
 
 
-
-
-/* Game and Results View Styles */
 
 .gametime-container,
 .gamenext-container {
@@ -200,8 +190,6 @@ body {
 
 
 
-/* Game Button Styles */
-
 .button {
   background-color: gray;
   margin: 17px;
@@ -231,8 +219,6 @@ body {
 
 
 
-/* Navigation Bar Styles */
-
 .navigation-bar {
   background-color: rgb(64,64,64);
   border-top: solid 6px rgb(50,50,50);
@@ -244,6 +230,12 @@ body {
 .ons-icon {
   color: white;
   margin-top: -6px;
+}
+
+.toolbar-button,
+.toolbar-button--outline,
+.toolbar-button--quiet {
+  color: white;
 }
 
 .navigation-bar__left {
@@ -316,4 +308,12 @@ ons-toolbar ~ .page__content {
 .ion-ios-arrow-back:before {
   font-size: 2.5rem;
   float: left;
+}
+
+.ion-ios-arrow-back:before {
+    content: "\f3d8";
+}
+
+.back-button__label {
+  padding-left: 10px;
 }
