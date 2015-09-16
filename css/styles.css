@@ -115,9 +115,9 @@ body {
   width: 90%;
 }
 
-ons-carousel-item {
+/*ons-carousel-item {
   padding-left: 0.8rem;
-}
+}*/
 
 
 /* Instruction View Styles */
@@ -219,6 +219,12 @@ ons-carousel-item {
 
 .play-button {
   float: left;
+}
+
+.topic-container:active,
+.button:active {
+  background-color: rgb(70,70,70);
+  opacity: 1;
 }
 
 
