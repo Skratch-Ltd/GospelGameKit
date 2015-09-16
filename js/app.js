@@ -21,6 +21,12 @@
     return o;
   }
 
+  function playSound(file) {
+    if (!settings.sound) return;
+    var audio = new Audio(file);
+    audio.play();
+  }
+
   module.controller('AppController', function($scope, $data) {
     $scope.changeSound = function() {
       settings.sound = checkSound.checked;
@@ -47,17 +53,12 @@
       updateSettings();
     }
 
-    $scope.playSound = function(file) {
-      if (!settings.sound) return;
-      var audio = new Audio(file);
-      audio.play();
-    }
-
     ons.createPopover('popover.html').then(function(popover) {
       $scope.popover = popover;
     });
 
     $scope.showPopover = function(e) {
+      playSound('audio/buttonpush.mp3');
       $scope.popover.show(e);
       checkSound.checked = settings.sound;
       checkMusic.checked = settings.music;
@@ -68,7 +69,12 @@
   module.controller('TopicController', function($scope, $data) {
     $scope.topics = $data.topics;
 
+    $scope.back = function() {
+      playSound('audio/buttonpush.mp3');
+    }
+
     $scope.showInstructions = function(index) {
+      playSound('audio/buttonpush.mp3');
       topic = $scope.topics[index];
       if (settings.instructions) {
         $scope.navi.pushPage("instructions.html", {animation: "lift" });
@@ -81,8 +87,12 @@
   module.controller('InstructionController', function($scope, $data) {
     $scope.game = game;
 
+    $scope.back = function() {
+      playSound('audio/buttonpush.mp3');
+    }
+
     $scope.startGame = function() {
-      console.log(game.title + ': ' + topic.title);
+      playSound('audio/buttonpush.mp3');
       $scope.navi.replacePage("game.html", {animation: "lift" });
     }
   });
@@ -112,13 +122,14 @@
     if (game.title == 'Catch Phrase' || game.title == 'Heads Up') {
       var transition;
       var timer = setTimeout(function() {
+        playSound('audio/timerstop.mp3');
         $data.playlist = wordList.slice(0, index + 1);
         document.getElementById('word_div').innerHTML = 'TIMES UP!';
         document.getElementById('nextButton').style.display = 'none'
         transition = setTimeout(function(){
           $scope.navi.replacePage('results.html', {animation: 'lift'});
         }, 2000);
-      }, settings.timerLength * 100);//TODO: Change to 1000
+      }, settings.timerLength * 1000);//TODO: Change to 1000
       $scope.navi.off('prepop');
       $scope.navi.on('prepop', function(event) {
         if (event.currentPage.name == 'game.html') {
@@ -129,10 +140,15 @@
     }
 
     $scope.nextWord = function() {
+      playSound('audio/buttonpush.mp3');
       index++;
       if (index == wordList.length)
         index = 0;
       document.getElementById('word_div').innerHTML = wordList[index];
+    }
+
+    $scope.back = function() {
+      playSound('audio/buttonpush.mp3');
     }
   });
 
@@ -146,11 +162,12 @@
     }
 
     $scope.back = function() {
+      playSound('audio/buttonpush.mp3');
       $scope.navi.popPage();
     }
 
     $scope.play = function() {
-      //$scope.navi.popPage();
+      playSound('audio/buttonpush.mp3');
       $scope.navi.pushPage("game.html", {animation: "lift", onTransitionEnd: function() {
         var pages = $scope.navi.getPages();
         pages[pages.length - 2].destroy();
@@ -162,11 +179,13 @@
     $scope.games = $data.games;
 
     $scope.showTopic = function(index) {
+      playSound('audio/buttonpush.mp3');
       game = $data.games[index];
       $scope.navi.pushPage("topics.html", {animation: "lift" });
     };
 
     $scope.changeGame = function(index) {
+      playSound('audio/buttonpush.mp3');
       gameCarousel.setActiveCarouselItemIndex(index);
     }
     /*Puts color line at bottom of home page
