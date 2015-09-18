@@ -224,17 +224,17 @@
         <ons-list-item>
           <label class="checkbox checkbox--noborder" ng-click="changeSound()">Sound<input id="checkSound" type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
         </ons-list-item>
-        <ons-list-item>
+        <!--<ons-list-item>
           <label class="checkbox checkbox--noborder" ng-click="changeMusic()">Music<input id="checkMusic" type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
-        </ons-list-item>
+        </ons-list-item>-->
         <ons-list-item>
           <label class="checkbox checkbox--noborder" ng-click="changeInstructions()">Instructions<input id="checkInstructions" type="checkbox" checked="checked"><div class="checkbox__checkmark  checkbox--noborder__checkmark"></div></label>
         </ons-list-item>
-        <ons-list-item>Timer Length</ons-list-item>
+        <ons-list-item>Timer Length (seconds)</ons-list-item>
         <ons-list-item><ons-row>
-          <ons-col width="20%">1min</ons-col>
-          <ons-col width="60%" align="center"><input id="timerRange" type="range" class="center" min="60" max="180" step="20" ng-model="settings.timerLength" ng-change="changeTimerLength()"></ons-col>
-          <ons-col width="20%" style="text-align: right;">3min</ons-col>
+          <ons-col width="20%">30</ons-col>
+          <ons-col width="60%" align="center"><input id="timerRange" type="range" class="center" min="30" max="90" step="10" ng-model="settings.timerLength" ng-change="changeTimerLength()"></ons-col>
+          <ons-col width="20%" style="text-align: right;">90</ons-col>
         </ons-row></ons-list-item>
       </ons-list>
     </ons-popover>

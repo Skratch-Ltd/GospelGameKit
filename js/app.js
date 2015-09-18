@@ -8,9 +8,9 @@
     settings = {music: true, sound: true, instructions: true, timerLength: 120};
   }
   localStorage.setItem("ggk-settings", JSON.stringify(settings));
-  var bgMusic = new Audio('audio/countdown.mp3');
+  /*var bgMusic = new Audio('audio/countdown.mp3');
   bgMusic.loop = true;
-  if (settings.music) bgMusic.play();
+  if (settings.music) bgMusic.play();*/
 
   function updateSettings() {
     localStorage.setItem("ggk-settings", JSON.stringify(settings));
@@ -249,7 +249,7 @@
         },
         {
           title: 'Doctrine and Covenants',
-          words: ['Adopted','Alcohol','Ancestors','Angel','Apostle','Arrested','Attacked','Baptized','Beautiful','Believe','Bishop','Blamed','Borrow','Bragged','Bridge','Bugle','Buried','Captain','Captured','Choices','Choose','Commandments','Conference','Counselors','Covenant','Created','Crops','Crucified','Dam','Deacons','','Dedicate','Destroy','Disciple','Earn','Elders','Endowment','Enemy','Escape','Evil','Evil spirits','Faith','Fast','Forgive','Gather','Gifts','Gospel','Governor','Heal','Jail','Joined','Language','Lead','Married','Mission','Missionary','Obey','Ocean','Ordained','Oxen','Patriarch','Poison','Pray','Preached','Presidency','President','Priesthood','Priests','Printer','Prison','Prophet','Protect','Quail','Repent','Resurrection','Revelation','Righteous','Sabbath','Sacrament','Sacred','Saint','Save','Scriptures','Share',"Soldier's",'Spirit','Steal','Suffer','Swear ','Swore','Tar','Temple','Tempt','Tithing','Tobacco','Translated','Truth','Testimony','Trappers','Vision','Witnesses','Worship','Wound','Adam-ondi-Ahman','America','Arizona','California','Carthage','Colorado','Council Bluffs','Egypt','Far West','Fayette','Harmony','Haun’s Mill','Heaven','Hill Cumorah','Idaho','Illinois','Independence','Jackson County','Jerusalem','Kirtland','Liberty','Mississippi River','Missouri','Nauvoo','New York','Ohio','Pacific Ocean','Palmyra','Pennsylvania','Quincy','Rocky Mountains','Salt Lake City','United States','Utah','Vermont','Winter Quarters','Wyoming','Zion','John C. Bennett','Captain Allen','Leman Copley','Oliver Cowdery','Elias','Elijah','Governor Boggs','Martin Harris','Orson Hyde','Indians','James','John','John the Baptist','Heber C. Kimball','Sarah Kimball','Spencer W. Kimball','Newel Knight','Lamanites','Melchizedek','Moroni','Moses','Mr. Chandler','Mr. Hale','Noah','Hiram Page','Edward Partridge','Peter','William W. Phelps','Pioneers','Parley P. Pratt','Willard Richards','Sidney Rigdon','Alvin Smith','Emma Smith','Hyrum Smith','Joseph Smith','Joseph Smith Sr.','Lucy Smith','Eliza R. Snow ','Taylor, John','David Whitmer','Peter Whitmer','Newel K. Whitney','Frederick G. Williams','Brigham Young','Phineas Young'],
+          words: ['Adopted','Alcohol','Ancestors','Angel','Apostle','Arrested','Attacked','Baptized','Beautiful','Believe','Bishop','Blamed','Borrow','Bragged','Bridge','Bugle','Buried','Captain','Captured','Choices','Choose','Commandments','Conference','Counselors','Covenant','Created','Crops','Crucified','Dam','Deacons','Dedicate','Destroy','Disciple','Earn','Elders','Endowment','Enemy','Escape','Evil','Evil spirits','Faith','Fast','Forgive','Gather','Gifts','Gospel','Governor','Heal','Jail','Joined','Language','Lead','Married','Mission','Missionary','Obey','Ocean','Ordained','Oxen','Patriarch','Poison','Pray','Preached','Presidency','President','Priesthood','Priests','Printer','Prison','Prophet','Protect','Quail','Repent','Resurrection','Revelation','Righteous','Sabbath','Sacrament','Sacred','Saint','Save','Scriptures','Share',"Soldiers",'Spirit','Steal','Suffer','Swear','Swore','Tar','Temple','Tempt','Tithing','Tobacco','Translated','Truth','Testimony','Trappers','Vision','Witnesses','Worship','Wound','Adam-ondi-Ahman','America','Arizona','California','Carthage','Colorado','Council Bluffs','Egypt','Far West','Fayette','Harmony','Haun’s Mill','Heaven','Hill Cumorah','Idaho','Illinois','Independence','Jackson County','Jerusalem','Kirtland','Liberty','Mississippi River','Missouri','Nauvoo','New York','Ohio','Pacific Ocean','Palmyra','Pennsylvania','Quincy','Rocky Mountains','Salt Lake City','United States','Utah','Vermont','Winter Quarters','Wyoming','Zion','John C. Bennett','Captain Allen','Leman Copley','Oliver Cowdery','Elias','Elijah','Governor Boggs','Martin Harris','Orson Hyde','Indians','James','John','John the Baptist','Heber C. Kimball','Sarah Kimball','Spencer W. Kimball','Newel Knight','Lamanites','Melchizedek','Moroni','Moses','Mr. Chandler','Mr. Hale','Noah','Hiram Page','Edward Partridge','Peter','William W. Phelps','Pioneers','Parley P. Pratt','Willard Richards','Sidney Rigdon','Alvin Smith','Emma Smith','Hyrum Smith','Joseph Smith','Joseph Smith Sr.','Lucy Smith','Eliza R. Snow ','Taylor, John','David Whitmer','Peter Whitmer','Newel K. Whitney','Frederick G. Williams','Brigham Young','Phineas Young'],
           phrases: ['Baptismal font','Telestial Kingdom','Terrestrial Kingdom','Garden of Gethsemane','Celestial Kingdom']
         },
         {
@@ -269,8 +269,8 @@
         },
         {
           title: 'Pearl of Great Price',
-          words: ['Moses','Abraham','Joseph Smith-Matthew','Joseph Smith-History','Articles of Faith'],
-          phrases: []
+          words: ['Moses','Abraham','Joseph Smith-Matthew','Persecution','Joseph Smith-History','Articles of Faith','Lucifer','God','Cain','Enoch','Noah','Jehovah','Pharaoh','Visions','Destruction','Moroni','Priesthood','Facsimiles'],
+          phrases: ['Plan of Salvation','The Angel Moroni','The First Vision','An Unusual Excitement','The Second Coming','Destruction of Jerusalem','End of the World','Time to Prepare','Creation of the Earth','Physical Creation','Spiritual Creation','Jesus Christ Prophesied','Abraham Taught the Egyptians','The Premortal Existence','The Stars and Moon','King of Egypt',"Abraham's Journey",'The Abrahamic Covenant','Blessings of the Fathers','Filled with Wickedness','Language of Power','From the Beginning','Adam and Eve','The Fall','How Lucifer Became the Devil','Husband and Wife',"God's Work",'God Revealed Himself']
         },
         {
           title: 'Primary Songs',
