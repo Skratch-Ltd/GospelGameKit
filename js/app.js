@@ -27,7 +27,7 @@
     audio.play();
   }*/
   function playSound(file) {
-    /*if (!settings.sound) return;
+    if (!settings.sound) return;
     if ( (typeof device != 'undefined') && (device.platform == 'Android') ) {
         file = '/android_asset/www/' + file ;
     }
@@ -43,7 +43,7 @@
     );
 
     // Play audio
-    my_media.play();*/
+    my_media.play();
   }
 
   module.controller('AppController', function($scope, $data) {
