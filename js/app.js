@@ -5,7 +5,7 @@
   var settings;
   settings = JSON.parse(localStorage.getItem("ggk-settings"));
   if (!settings) {
-    settings = {music: true, sound: true, instructions: true, timerLength: 120};
+    settings = {music: true, sound: true, instructions: true, timerLength: 60};
   }
   localStorage.setItem("ggk-settings", JSON.stringify(settings));
   /*var bgMusic = new Audio('audio/countdown.mp3');
