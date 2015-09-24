@@ -182,6 +182,11 @@ html {
   margin-top: -1em;
 }
 
+.timer {
+  text-align: center;
+  font-size: 2rem;
+}
+
 .page-container {
   height: 90%;
 }

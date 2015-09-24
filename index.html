@@ -7,6 +7,7 @@
   <meta name="mobile-web-app-capable" content="yes" />
 
   <!-- JS dependencies (order matters!) -->
+  <script src="phonegap.js"></script>
   <script src="scripts/platformOverrides.js"></script>
   <script src="lib/angular/angular.js"></script>
   <script src="lib/onsen/js/onsenui.js"></script>
@@ -174,7 +175,7 @@
         </div>
       </ons-toolbar>
 
-      <ons-row class="gametime-container"></ons-row>
+      <ons-row class="gametime-container" align="center"><ons-col id="timer_div" class="timer"></ons-col></ons-row>
       <ons-row class="gameword-container" align="center"><ons-col class="word" id="word_div"></ons-col></ons-row>
       <ons-row class="gamenext-container" align="center">
         <ons-col class="button-col"></ons-col>

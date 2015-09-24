@@ -21,10 +21,29 @@
     return o;
   }
 
-  function playSound(file) {
+  /*function playSound(file) {
     if (!settings.sound) return;
     var audio = new Audio(file);
     audio.play();
+  }*/
+  function playSound(file) {
+    /*if (!settings.sound) return;
+    if ( (typeof device != 'undefined') && (device.platform == 'Android') ) {
+        file = '/android_asset/www/' + file ;
+    }
+    if (typeof Media != 'undefined') {
+  	   new Media( file ).play();
+    }
+    // Play the audio file at url
+    var my_media = new Media(file,
+      // success callback
+      function () { console.log("playAudio():Audio Success"); },
+      // error callback
+      function (err) { console.log("playAudio():Audio Error: " + err); }
+    );
+
+    // Play audio
+    my_media.play();*/
   }
 
   module.controller('AppController', function($scope, $data) {
@@ -121,7 +140,15 @@
 
     if (game.title == 'Catch Phrase' || game.title == 'Heads Up') {
       var transition;
+      var time = settings.timerLength
+      document.getElementById('timer_div').innerHTML = time;
+      var tick = setInterval(function() {
+        time--;
+        document.getElementById('timer_div').innerHTML =  time;
+      }, 1000);
       var timer = setTimeout(function() {
+        clearInterval(tick);
+        document.getElementById('timer_div').innerHTML = '0';
         playSound('audio/timerstop.mp3');
         $data.playlist = wordList.slice(0, index + 1);
         document.getElementById('word_div').innerHTML = 'TIMES UP!';
@@ -135,6 +162,7 @@
         if (event.currentPage.name == 'game.html') {
           clearTimeout(transition);
           clearTimeout(timer);
+          clearInterval(tick);
         }
       });
     }
